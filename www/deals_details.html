@@ -1,0 +1,139 @@
+<div class="scrollable dealsPage">
+  <div class="scrollable-content container-fluid section">
+    
+
+    <div class="atDealsListMain">
+        <div class="clsDealsHeader clearfix atDealsListHeader">
+            <div class="clsDealTle col-lg-12 col-md-12 col-sm-12 text-center"> <a href="#deal/{{deals.cat_slug}}/{{deals.post_name}}" data-post-id="{{deals.post_name}}" class="clsDealDetailView" data-post-cat-name="{{deals.cat_name}}" ng-bind-html="deals.post_title"></a> </div>
+            <div class="clear"></div>
+            <div class="clsDealsDesc col-lg-12 col-md-12 col-sm-12 text-center" ng-bind-html="deals.merchent_details.title"></div>
+        </div>
+        <div class="dealImage">
+          <img ng-src="{{ deals.mobile_thumb }}" title="{{deals.post_small_description}}" alt="{{deals.post_small_description}}" ng-show="deals.mobile_thumb" src="images/default-item-pic.jpg" />
+        </div>
+        <div class="row atDealsViewDiv">
+        <div class="col col-50 text-center">
+          <div class="clsDealsListViewBtnBuy">
+            <a href="#dealOptionOverlay" class="clsViewDeal clsDealDetailView clsDealsListViewBtnBuyLink" toggle="on" onclick="AesthticMobile.windowResize();" ng-hide="deals.deals_option_count==0" ng-click="buyAsGift=0">BUY & BOOK AN APPOINTMENT</a> 
+              <a href="#buy/{{deals.post_name}}" class="clsViewDeal clsDealDetailView clsDealsListViewBtnBuyLink" data-post-id="{{deals.ID}}" data-post-cat-name="{{deals.cat_name}}" ng-show="deals.deals_option_count==0">BUY & BOOK AN APPOINTMENT</a>
+          </div>
+        </div>
+          <div class="col col-50 text-center">
+            <div class="clsDealsListViewBtnBuyGift">
+              <a href="#dealOptionOverlay" class="clsViewDeal clsDealDetailView clsDealsListViewBtnBuyGiftLink" toggle="on" onclick="AesthticMobile.windowResize();" ng-hide="deals.deals_option_count==0" ng-click="buyAsGift=1">BUY AS<br>A GIFT</a> 
+                <a href="#buy/{{deals.post_name}}?buyAsGift=1" class="clsViewDeal clsDealDetailView clsDealsListViewBtnBuyGiftLink" data-post-id="{{deals.ID}}" data-post-cat-name="{{deals.cat_name}}" ng-show="deals.deals_option_count==0" ng-click="buyAsGift=1">BUY AS<br>A GIFT</a>
+            </div>
+          </div>
+        </div>
+        <div class="row atDealsListFooter atDealDetailsPage">
+          <div class="col col-50 text-center">
+            <div>
+                  <span class="clsNow">&nbsp;<small ng-if="(1 * deals.sale_price) > deals.deal_discount_price && 1!=1">NOW</small>&nbsp;</span><br>
+                  <span class="clsCurrencyVal">{{deals.aes_deal_curreny_code}}</span>
+                  <span class="clsPriceVal">{{deals.deal_discount_price}}</span><br>&nbsp;
+                  <s>
+                    <span class="clsCurrencyValOld" ng-if="(1 * deals.sale_price) > deals.deal_discount_price && 1!=1">{{deals.aes_deal_curreny_code}}</span>
+                    <span class="clsPriceValOld" ng-if="(1 * deals.sale_price) > deals.deal_discount_price && 1!=1">{{deals.sale_price}}</span>
+                  </s>&nbsp;
+            </div>
+          </div>
+          <div class="col col-50 text-center">
+            <span> <small>BOUGHT</small></span><br>
+            <span class="clsTotalBought"> {{deals.no_of_bought }} </span>
+          </div>
+          
+        </div>
+
+      </div>
+
+
+
+
+      <div class="clsMobileDeals col-lg-12 col-md-12 col-sm-12">
+        
+        
+        <div class="clsHowItWorks clearfix col-lg-12 col-md-12 col-sm-12">
+          <div class="clsLabel">How IT WORKS : </div>
+          <div class="clsDealDesc" ng-bind-html="deals.post_description"> </div>
+          <div class="cls30ExchangeDiv"> <img class="cls30Exchange" src="images/30_exchange.png" /> <i>Terms and conditions apply</i> </div>
+          <div class="clsOffers" ng-show="deals.deals_option_count">
+            <h1>The Offer</h1>
+            <div class="clsOfferOpt" ng-repeat="dealOptions in deals.deals_opt" ng-show="deals.deal_moh_approval==0"><strong>Option {{ $index+1 }} : </strong> {{ deals.aes_deal_curreny_code+" "+dealOptions.aes_product_opt_discounted_price+" : "+dealOptions.aes_product_opt_tle}} </div>
+            <div class="clsOfferOpt" ng-repeat="dealOptions in deals.deals_opt" ng-show="deals.deal_moh_approval==1"><strong>Option : {{ $index+1 }}</strong> {{ deals.aes_deal_curreny_code+" "+dealOptions.aes_product_opt_discounted_price+" for "+dealOptions.aes_product_opt_tle}} </div>
+          </div>
+          <div ng-show="deals.deal_moh_approval==1" class="clsMoh">
+            <div class="clsMohLicenceNo">This advertisement permission was granted by MOH ( Ministry of Health ) under the License No. <span>{{ deals.deal_moh_licence_no }}</span></div>
+            <div class="clsMohDesc ar">تم منح هذا التصريح الإعلاني من وزارة الصحة استنادا إلى التراخيص المهنية / تراخيص مزاولة النشاط للمؤسسة المعلنة ومقدمي الخدمات والمنتجات الصحية بها، حيث يتعين على هؤلاء تقديم الخدمة / المنتج طبقا للأنظمة والمعايير التي وضعتها الجهات المانحة لتلك التراخيص. وزارة الصحة ليست طرفا في هذه الصفقة أو أي من شروطها مطلقا. شراء هذه الصفقة هو حصريا على مسئولية المستهلك</div>
+            <div class="clsMohDesc">This advertisement permission was granted by MOH based on the professional / activity licenses for both advertising facility and its healthcare providers who should deliver the service / products in accordance with the regulations and standards set by the licensing authority. MOH is ABSOLUTELY NOT part of this deal or any of its terms . Buying the deal is exclusively the responsibility of the consumer. </div>
+          </div>
+        </div>
+        <div class="clsMerchantDetails clearfix">
+          <div class="clsMerchantLocation clsFloatLeft col-lg-8 col-md-8 col-sm-8">
+            <div class="clsLabel">LOCATION : </div>
+            <div class="clsAddress">
+              <div class="address">{{deals.merchent_details._aes_address_one}}</div>
+              <div class="address">{{deals.merchent_details._aes_address_two}}</div>
+              <div class="address" ng-show="deals.merchent_details._aes_contact!=''">Contact No : {{deals.merchent_details._aes_contact_phone}}</div>
+              <!--<div class="address" ng-show="deals.merchent_details._aes_address_pin!=''">P.O. Box: {{deals.merchent_details._aes_address_pin}} </div>--> 
+            </div>
+            <div class="clsAddress" ng-if="deals.merchent_details.merchant_multiloc_option>1">
+              <div class="address">{{deals.merchent_details.merchant_multiloc_details.merchant_multiloc_address_1}}</div>
+              <div class="address">{{deals.merchent_details.merchant_multiloc_details.merchant_multiloc_address_2}}</div>
+              <div class="address">{{deals.merchent_details.merchant_multiloc_details.merchant_multiloc_emirate}}</div>
+              <div class="address" ng-show="deals.merchent_details.merchant_multiloc_details.merchant_multiloc_phone!=''">Contact No : {{deals.merchent_details.merchant_multiloc_details.merchant_multiloc_phone}}</div>
+              <!--<div class="address" ng-show="deals.merchent_details._aes_address_pin!=''">P.O. Box: {{deals.merchent_details._aes_address_pin}} </div>--> 
+            </div>
+          </div>
+          <div class="clsMerchantAddress clsFloatLeft col-lg-4 col-md-4 col-sm-4">
+            <div class="clsMerchantLogo"> <img ng-src="{{deals.merchent_details._aes_merchent_logo}}"  /> </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="getDirection clearfix col-lg-12 col-md-12 col-sm-12">
+          <div class="locationMap"> <a href="https://www.google.com/maps/place/{{ deals.merchent_details._aes_latitude+','+deals.merchent_details._aes_longitude }}" target="_blank"> <img ng-src="http://maps.googleapis.com/maps/api/staticmap?center={{deals.merchent_details._aes_latitude+','+deals.merchent_details._aes_longitude }}&zoom=15&size=1000x400&markers={{deals.merchent_details._aes_latitude+','+deals.merchent_details._aes_longitude }}" /> </a> </div>
+          <a class="btn btn-primary dealDetailsMapDirection" target="_blank" href="https://www.google.com/maps/dir//{{ deals.merchent_details._aes_latitude+','+deals.merchent_details._aes_longitude }}">Get Directions</a> </div>
+        <p>&nbsp;</p>
+      </div>
+  </div>
+</div>
+<div overlay="dealRatingOverlay">
+  <div class="genPopupNoBorder scrollable">
+    <div class="multiDealheadline"> Rate - {{ deals.post_title}} <span class="closeBtn" target="dealRatingOverlay" toggle="off"><i class="fa fa-times-circle-o"></i></span> </div>
+    <div class="clsRatingDesc">Rate this deal from 1 being the lowest and 5 the highest.</div>
+    <div class="messageContainer" ng-show="ratingUpdate.resMessage.length">
+      <div ng-repeat="resMessage in ratingUpdate.resMessage" ng-class="resMessage.msgType" type="{{ resMessage.msgType }}" ng-bind-html="resMessage.msg" ></div>
+    </div>
+    <div class="clsRatingCon">
+      <angular-ratings ng-model="edit_total_review_star" notify-id="deals.ID" notify-url="{{ site_url+'/mobile_api.php'}}"></angular-ratings>
+    </div>
+  </div>
+</div>
+<div overlay="dealOptionOverlay" style="background:#000">
+  <div class="genPopupNoBorder scrollable">
+    <div class="multiDealheadline"> Choose your deal <span class="closeBtn" target="dealOptionOverlay" toggle="off"><i class="fa fa-times-circle-o"></i></span> </div>
+    <div class="clearfix scrollable-content clsDealOptionCon">
+      <ul class="clsSelectOption" ng-show="deals.deal_moh_approval==0">
+        <li ng-repeat="dealOptions in deals.deals_opt" id="dealCount_{{ $index+1 }}" class="jMultiDealOption col-lg-12 col-md-12 col-sm-12 clearfix">
+          <div class="multiDealLeft col-lg-8 col-md-8 col-sm-8">
+            <div class="multiDealTitle"><a ng-mobile-click="goToBuyPage(deals.post_name,$index+1)">{{ dealOptions.aes_product_opt_tle }}</a></div>
+            <div class="multiDealConditions" ng-if="(1 * dealOptions.aes_product_opt_price) > (1 * dealOptions.aes_product_opt_discounted_price)"> <span>{{dealOptions.save_percentage}} %</span> Off <span> ( {{deals.aes_deal_curreny_code +  dealOptions.aes_product_opt_price}} value) </span> </div>
+          </div>
+          <div class="multiDealRight col-lg-4 col-md-4 col-sm-4 clearfix"> <a ng-mobile-click="goToBuyPage(deals.post_name,$index+1)" class="buybutton">{{deals.aes_deal_curreny_code+""+dealOptions.aes_product_opt_discounted_price}}</a> </div>
+        </li>
+      </ul>
+      <ul class="clsSelectOption" ng-show="deals.deal_moh_approval==1">
+        <li ng-repeat="dealOptions in deals.deals_opt" id="dealCount_{{ $index+1 }}" class="jMultiDealOption col-lg-12 col-md-12 col-sm-12 clearfix">
+          <div class="multiDealLeft col-lg-8 col-md-8 col-sm-8">
+            <div class="multiDealTitle"><a ng-mobile-click="goToBuyPage(deals.post_name,$index+1)">{{ dealOptions.aes_product_opt_tle }}</a></div>
+          </div>
+          <div class="multiDealRight col-lg-4 col-md-4 col-sm-4 clearfix"> <a ng-mobile-click="goToBuyPage(deals.post_name,$index+1)" class="buybutton">{{deals.aes_deal_curreny_code+""+dealOptions.aes_product_opt_discounted_price}}</a> </div>
+        </li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+    </div>
+    <div class="multiDealFooter">
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>

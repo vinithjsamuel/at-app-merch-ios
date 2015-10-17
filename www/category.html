@@ -1,0 +1,19 @@
+<div class="scrollable clsCategory">
+  <div class="scrollable-content">
+    <div class="list-group">
+      <a href="#/deals/all" class="list-group-items">
+      All Deals
+        <i class="fa fa-chevron-right pull-right"></i>
+      </a>
+      <a ng-repeat="category in categories" ng-href="#/subcategories/{{ category.slug }}" class="list-group-items" ng-click="SetCategory(category.id,category.name)" ng-show="catDealCount(category.slug)!=0">
+        {{ category.name }} 
+        <i class="fa fa-chevron-right pull-right"></i>
+      </a>
+      <!--<a ng-repeat="category in categories" class="list-group-items" ng-click="SetCategory(category.id,category.name)" ng-show="catDealCount(category.slug)==0">
+        {{ category.name}} 
+        <span ng-show="catDealCount(category.slug)==0" class="clsSoon">Coming soon</span>
+      </a>-->
+     
+    </div>
+  </div>
+</div>

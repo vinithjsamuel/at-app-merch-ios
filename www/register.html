@@ -1,0 +1,55 @@
+<div class="clsLogin" overlay="registerOverlay" ng-show="userid==0" default="active" ng-controller="loginController as loginCtrl">
+  <form id="registerFrm" name="registerFrm" method="post" novalidate ng-submit="loginCtrl.registerSubmitForm(registerFrm)">
+    <div class="regFormCont">
+    <h1>Easy steps to sign up</h1>
+     <!-- <div class="formHeader clearfix"> <a id="closeFrm" class="btn btn-primary col-lg-4 col-sm-4 col-md-4 clsfloatLeft" ng-click="closeOvelay('signup')">Close</a>
+        <h1 class="col-lg-4 col-sm-4 col-md-4">Sign up</h1>
+        <button class="btn btn-primary col-lg-4 col-sm-4 col-md-4 clsfloatLeft" id="submitFrmReg" type="submit" ng-disabled="registerFrm.$invalid">Submit</button>
+        <div class="clrFlt"></div>
+      </div>-->
+      <div class="frmCont">
+        <div class="messageContainer" ng-show="loginCtrl.resMessage.length">
+          <div ng-repeat="resMessage in loginCtrl.resMessage" ng-class="resMessage.msgType" type="{{ resMessage.msgType }}" ng-bind-html="resMessage.msg" ></div>
+        </div>
+        <div class="clsFrmField clearfix">
+          <div class="col-lg-12 col-sm-12 col-md-12">
+            <label for="name" class="col-lg-12 col-sm-12 col-md-12">Name</label>
+          </div>
+          <div class="col-lg-12 col-sm-12 col-md-12">
+            <input type="text" name="name" id="name" required ng-model="registerFrm.name" class="col-lg-12 col-sm-12 col-md-12  form-control" auto-fill-sync>
+          </div>
+        </div>
+        <div class="clsFrmField clearfix">
+          <div class="col-lg-12 col-sm-12 col-md-12">
+            <label for="contactNo" class="col-lg-12 col-sm-12 col-md-12">Contact No (Optional)</label>
+          </div>
+          <div class="col-lg-12 col-sm-12 col-md-12">
+            <input type="text" name="contactNo" id="contactNo" ng-model="registerFrm.contactNo" class="col-lg-12 col-sm-12 col-md-12  form-control" auto-fill-sync>
+          </div>
+        </div>
+        <div class="clsFrmField clearfix">
+          <div class="col-lg-12 col-sm-12 col-md-12">
+            <label for="email" class="col-lg-12 col-sm-12 col-md-12">Email</label>
+          </div>
+          <div class="col-lg-12 col-sm-12 col-md-12">
+            <input type="text" name="email" id="email" required ng-model="registerFrm.email" class="col-lg-12 col-sm-12 col-md-12  form-control" auto-fill-sync>
+          </div>
+        </div>
+        <div class="clsFrmField clearfix">
+          <div class="col-lg-12 col-sm-12 col-md-12">
+            <label for="password">Password</label>
+          </div>
+          <div class="col-lg-12 col-sm-12 col-md-12">
+            <input  type="password" name="pwdField" id="pwdField" ng-model="registerFrm.pwdField" class="col-lg-12 col-sm-12 col-md-12 form-control" ng-required="true" auto-fill-sync  />
+          </div>
+        </div>
+        <div class="clsFrmField clearfix formDesc">
+        	<button class="btn btn-primary" id="submitFrmReg" type="submit" ng-disabled="registerFrm.$invalid">Submit</button>
+            <p>&nbsp;</p>
+            <p>Already a member? <a style="text-decoration:underline;" ng-click="openLogin('registerOverlay')">Click here</a>.</p>
+        	<!--<strong>Already a member?</strong> <a class="btn btn-primary clsfloatLeft" ng-click="openLogin('registerOverlay')">Login</a>-->
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

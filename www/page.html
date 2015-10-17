@@ -1,0 +1,13 @@
+<div class="scrollable"> 
+  <div class="scrollable-content container-fluid section">
+     <img src="images/about_us.jpeg" class="clsDescImg"  ng-show="location=='/contact'"/>
+     <img src="images/our_vission.jpg" class="clsDescImg"  ng-show="location=='/about-us' || location=='/our-vission'"/>
+	<div class="clsPageDesc">
+    	<div ng-bind-html="pageContent"></div>
+        <div ng-show="location=='/contact'" class="clsLinks">
+        	<p><a href="#/terms-and-conditions">Terms and Conditions</a></p>
+            <p><a href="#/faqs">FAQs</a></p>
+        </div>
+    </div>
+  </div>
+</div>

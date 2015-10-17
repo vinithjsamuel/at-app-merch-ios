@@ -1,0 +1,71 @@
+<div class="scrollable">
+  <div class="scrollable-content container-fluid section">
+    <div class="clsPageDesc">
+
+      <div class="list card">
+        <a class="item item-avatar">
+          <img height="auto" ng-src="{{placeorder.deal_details.deal_thumb_img}}" src="assets/images/default-item-pic.jpg">
+          <h2 class="at-color-light">{{placeorder.deal_details.post_title}}</h2>
+        </a>
+        <a class="at-color-light item item-icon-left">
+          <i class="icon ion-pricetag"></i>
+          Deal Price: <strong ng-if="placeorder.product_price">{{placeorder.product_price}} AED</strong>
+          <strong ng-if="!placeorder.product_price">0 AED</strong>
+        </a>
+        <a class="at-color-light item item-icon-left">
+          <i class="icon ion-ios-browsers-outline"></i>
+          Quantity: <strong>{{placeorder.product_qty}}</strong>
+        </a>
+        <a class="at-color-light item item-icon-left">
+          <i class="icon ion-pricetags"></i>
+          Total Amount: <strong ng-if="placeorder.product_amount_to_pay">{{placeorder.product_amount_to_pay}} AED</strong>
+          <strong ng-if="!placeorder.product_amount_to_pay">0 AED</strong>
+        </a>
+      </div>
+
+      <div class="list placecodCls">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">First Name:</span>
+          <input ng-model="placeorder.user_details.at_first_name" type="text">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Last Name:</span>
+          <input ng-model="placeorder.user_details.at_last_name" type="text">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Telephone/Mobile:</span>
+          <input type="text" ng-model="placeorder.user_details._aes_contact">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Email:</span>
+          <input type="text" ng-model="placeorder.user_details.user_email">
+        </label><br>
+        <p>Voucher Delivery Address:</p>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Address Line 1:</span>
+          <input ng-model="placeorder.user_details._aes_address_one" type="text">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Address Line 2:</span>
+          <input ng-model="placeorder.user_details._aes_address_two" type="text">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">PO Box:</span>
+          <input ng-model="placeorder.user_details._aes_address_pin" type="text">
+        </label>
+
+        <label class="item item-input item-stacked-label">
+          <div class="input-label at-color-light">City:</div>
+          <select class="at-color-light cod-emirate-option" ng-model="placeorder.city._aes_address_emirate">
+                  <option ng-repeat="option in placeorder.city.availableOptions" value="{{option.id}}">{{option.name}}</option>
+          </select>
+        </label>
+
+        <br>
+        <button  ng-click="placeOrderSubmit(placeorder)" class="appointmentSubmitBtn button button-full">
+          Place Order
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="scrollable">
+  <div class="scrollable-content container-fluid section">
+    <div id="no-results" class="feed-message" ng-show="userPurchase==0"><h3>You have not made any purchases yet.</h3></div>
+    <div class="clsUserRowWrapper clsMyPurchases clsScrollContainer" ng-show="userPurchase.length!=0">
+     <div class="clsUserPurchasedDeal clearfix" ng-repeat="purchase in userPurchase">
+         <div class="clsDealImg clsFloatLeft col-lg-4 col-md-4 col-sm-4">
+            <img ng-src="{{ purchase.dealDetail.deal_thumb_img }}" alt="{{ purchase.dealDetail.post_title }}" title="{{ purchase.dealDetail.post_title }}" width="100%" />
+         </div>
+         <div class="clsDealDesc clsFloatLeft col-lg-7 col-md-7 col-sm-7">
+            <div class="clsDealTle">
+                {{ purchase.dealDetail.post_title }}
+            </div>
+            <div class="clsPurchaseDescription">
+                <p>Price : {{ purchase.dealDetail.deal_discount_price+" "+ purchase.dealDetail.aes_deal_curreny_code }}</p>
+                <div>
+                    Valid from {{ purchase.deal_paid }} to {{ purchase.deal_expiry_date }}
+                    <div ng-if="purchase.is_full_paid == 1">
+                        <p><a href="{{ site_url+'/voucher?type=print&voucher_no='+purchase.reff_code}}" target="_blank">View</a></p>
+                        <p><a href="{{ site_url+'/voucher?type=dowload&voucher_no='+purchase.reff_code}}" target="_blank">Download</a></p>
+                    </div>
+                    <div ng-if="purchase.is_full_paid != 1">
+                        <p><a href="#/mypurchase">View(waiting for payment)</a></p>
+                        <p><a href="#/mypurchase">Download(waiting for payment)</a></p>
+                    </div>
+                </div>
+            </div>
+         </div>
+     </div>
+    </div>
+  </div>
+</div>

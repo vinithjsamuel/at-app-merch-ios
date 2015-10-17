@@ -1,0 +1,53 @@
+<div class="userLogedIn clearfix" ng-show="userid!=0" style="display:none">
+  <div class="clsDisLabel col-lg-6 col-md-6 col-sm-6">You logged in as :</div>
+    <div class="userAdmin col-lg-6 col-md-6 col-sm-6"  ng-show="userid==1">
+      Admin
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6" ng-show="userdata.first_name!='' && userdata.last_name!=''">
+      {{ userdata.first_name+' '+ userdata.last_name }}
+    </div> 
+    <div class="col-lg-6 col-md-6 col-sm-6" ng-show="userdata.first_name=='' && userdata.last_name==''">
+      {{ userdata.email }}
+        <p style="margin:5px 0 0">Please complete your profile <a href="#">here</a></p>
+    </div>
+</div>
+<!--<h1 class="app-name">
+  <img src="../dist/images/logo.png" />
+</h1>-->
+
+<!--<a href="#">
+  <img src="#" />
+</a>-->
+<div class="scrollable sidebar-scrollable"> 
+  <div class="scrollable-content">
+    <div class="list-group" toggle="off" bubble target="mainSidebar">
+      <a class="list-group-items" href="#/deals/all"><i class="fa fa-shopping-cart fa-2x"></i> <span>All Deals</span></a>
+      <a class="list-group-items" href="#/bookappointment"><i class="fa fa fa-book fa-2x"></i> <span>Book an Appointment</span></a>
+
+  <a class="list-group-items" href="#login" ng-show="userid==0 && !loading"><i class="fa fa-lock fa-navbar"></i> <span>Login</span></a>
+  <a class="list-group-items" href="#sign-up" ng-show="userid==0 && !loading"><i class="fa fa-user fa-navbar"></i> <span>Sign Up</span></a>
+
+      <a class="list-group-items" href="#/categories"><i class="fa fa-list fa-2x"></i> <span>Categories</span></a>
+      <div class="btn-group toggleable-dropdown" active-class="open" id="myAccountDropdown" toggleable ng-show="userid!=0"> 
+        <a class="list-group-items dropdown-toggle" toggle target="myAccountDropdown"><i class="fa fa-cog fa-2x"></i> <span>My Account</span> <i class="fa fa-chevron-right pull-right"></i></a>
+          <ul class="dropdown-menu" role="menu" toggle="off" bubble target="myAccountDropdown">
+          <li><a href="#/myaccount"> - My Personal Info</a></li>
+            <li><a href="#/mypoints"> - My Level</a></li>
+           <!-- <li><a href="#/myaccount"> - My Wallet</a></li>-->
+            <li><a href="#/mypurchase"> - My Purchases</a></li>
+            <li><a ng-click="logout()"> - Logout</a></li>
+          </ul>
+    </div>
+      <a class="list-group-items" href="#/about-us"><i class="fa fa-comment-o fa-2x"></i> <span>About Us</span></a> 
+      <a class="list-group-items" href="#/our-vission"><i class="fa fa-eye fa-2x"></i><span>Our Vision</span></a>
+      <!--<a class="list-group-items" href="#/web"><i class="fa fa-globe fa-2x"></i> <span>Desktop Version</span></a>-->
+      <a class="list-group-items" onclick="window.open('https://www.facebook.com/AestheticToday', '_system');"><i class="fa fa-facebook fa-2x"></i> <span>Facebook</span></a>
+      <a class="list-group-items" onclick="window.open('https://twitter.com/AestheticToday', '_system');"><i class="fa fa-twitter  fa-2x"></i> <span>Twitter</span></a>
+      <a class="list-group-items" onclick="window.open('http://instagram.com/aesthetictoday', '_system');"><i class="fa fa-instagram fa-2x"></i> <span>Instagram</span></a>
+      <!--<a class="list-group-items" href="#refer-a-friend" ng-show="userid!=0"><i class="fa fa-share fa-navbar"></i> <span>Refer A Friend</span></a>-->
+      <a class="list-group-items" href="#/find-us"><i class="fa fa-map-marker fa-2x"></i> <span>Find Us</span></a>
+      <a class="list-group-items" href="#/partner-with-us"><i class="fa fa-suitcase fa-2x"></i> <span>Partner With Us</span></a>
+      <a class="list-group-items" href="#/contact"><i class="fa fa-phone fa-2x"></i> <span>Contact Us</span></a>
+    </div>
+  </div>
+</div>

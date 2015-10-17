@@ -1,0 +1,2097 @@
+.navbar-app {background: #691741;/*#CA3482*/}.clsDescImg {width: 100%}
+.app-content-loading,div.myAccountPage {
+    background: #691741;
+}
+.navbar-brand.navbar-brand-center a{color: #fff;}
+.navbar-absolute-bottom .btn-group a{text-align: left;}
+.app-content-loading .loading-spinner {
+    color: #fff!important;
+}
+.sidebar-toggle i.fa-bars {
+    display: inline-block;
+    font-size: 25px;
+    position: absolute;
+    top: 12px;
+}
+#mainSidebar .list-group {
+    margin: 0;
+}
+#mainSidebar a.list-group-items{
+    display: block;
+    background-color: rgba(0, 0, 0, .5);
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+#mainSidebar a.list-group-items span{
+    padding-left: 15px;
+}
+#mainSidebar a.list-group-items i{
+    width: 5%;
+}
+/*#mainSidebar .list-group-item {
+    background-color: rgba(0, 0, 0, .5);
+    border-color: transparent;
+    position: relative;
+}   
+#mainSidebar .list-group-item i {
+    display: inline-block;
+}
+#mainSidebar .list-group-item span {
+    display: inline-block;
+    left: 55px; 
+    position: absolute;
+    top: 15px;
+    width: 90%; 
+}
+#mainSidebar a.list-group-item {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}*/
+#mainSidebar.sidebar-left {
+    background: #CB307F;
+}
+#mainSidebar .app-name {
+    margin: 50px 0 0;
+    text-align: left;
+}
+#mainSidebar .app-name img {
+    margin: 100px 0 0 20px;
+    width: 45%}
+.app-name+.scrollable, .sidebar-header+.scrollable {
+    padding-top: 300px;
+}
+#mainSidebar .toggleable-dropdown {
+    width: 100%}
+#mainSidebar .dropdown-menu {
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    background: #731E49;
+    margin: 0;
+    position: relative;
+}
+#mainSidebar .dropdown-menu li a:hover{
+    background: none;
+}
+#mainSidebar .dropdown-menu a {
+    color: #fff;
+    padding: 10px 20px;
+}
+.app-body .scrollable {
+    background-color: #FEFEFE;
+}
+.section {
+    background: none;
+}
+.scrollable-content.section {
+    padding: 0px 0;
+}
+.clsPageDesc {
+    background: #691741;
+    color: #fff;
+    padding: 10px;
+    margin-top: -5px;
+}
+.clsContactDetails {
+    margin: 0 0 10px;
+}
+.clsContactDetails ul {
+    margin: 0;
+    padding: 0;
+}
+.clsContactDetails ul li {
+    font-size: 16px;
+    list-style: none;
+    padding: 5px 0;
+}
+.clsContactDetails ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+.clsContactDetails i {
+    color: #fff;
+    padding-right: 10px;
+    font-size: 20px;
+}
+.clsPageDesc .clsQuestions .subHeads {
+    font-weight: 700;
+    margin: 5px 0;
+    font-size: 20px;
+}
+.clsPageDesc .clsQuestions .clsQuestion {
+    font-weight: 700;
+}
+.clsPageDesc .clsQuestions .clsAnswer {
+    font-style: italic;
+}
+.clsBack {
+    position: absolute;
+    right: 17px;
+    top: 7px;
+    cursor: pointer;
+}
+.navbar-app .btn-navbar:hover, .navbar-app .btn:hover {
+    color: #FFC0D4;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+* html .clearfix {
+    height: 1%}
+.clearfix {
+    display: block;
+}
+.clsFloatLeft {
+    float: left;
+}
+.clsFloatRight {
+    float: right;
+}
+.clear {
+    clear: both;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    background: url(../images/ajax-loader.gif) center center no-repeat #fff;
+    padding: 0;
+    margin: 0;
+    overflow-y: hidden;
+    height: 100%}
+div.clrFlt {
+    clear: both;
+}
+#mainContent {
+    height: 100%;
+    width: 100%}
+#sidebar {
+    background: #000;
+    height: 100%;
+    padding: 0;
+}
+.mainloader {
+    opacity: .5;
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: #000;
+    text-align: center;
+    padding: 5px;
+}
+.mainloader img {
+    position: absolute;
+    top: 48%;
+    left: 48%;
+    width: 25px;
+    opacity: .5;
+}
+.leftSideContainer {
+    overflow-y: scroll;
+}
+#sidebar ul {
+    margin: 0;
+    padding: 0;
+}
+#sidebar ul li {
+    border-bottom: solid 1px #fff;
+    padding: 5px;
+}
+#sidebar ul li:last-child {
+    border: none;
+}
+#sidebar ul li a {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+}
+#sidebar .search {
+    margin: 10px 0 0;
+}
+.menuCat {
+    background: #666;
+    padding: 5px;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+}
+.header {
+    z-index: 99;
+    background: #000;
+    margin: 0 -15px;
+    height: 45px;
+}
+.header a.menuToggle {
+    color: #fff;
+    position: relative;
+    top: 8px;
+}
+.header .topLM, .topRM {
+    float: left;
+    width: 15%;
+    text-align: center;
+}
+.pageHeader {
+    float: left;
+    width: 70%;
+    text-align: center;
+    padding: 15px;
+    font-weight: 700;
+    font-size: 15px;
+}
+.bodyContent {
+    height: 100%;
+    margin: 0 -15px;
+    padding: 0;
+    position: relative;
+}
+.logo, .site_logo {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    left: 0;
+}
+.logo img, .site_logo img {
+    width: 45%;
+    margin: 15px 0 0;
+}
+.fbconnect {
+    text-align: center;
+}
+.fbconnect img {
+    width: 40%}
+#catlistContainer {
+    position: fixed;
+    width: 100%;
+    height: 100%}
+.dealsContent {
+    margin: 0;
+    overflow-y: scroll;
+}
+.itemContent {
+    position: relative;
+}
+.dealItem {
+    width: 50%;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+}
+.dealItem img {
+    width: 100%;
+    padding: 0;
+}
+.dealItem a {
+    color: #fff;
+    font-weight: 700;
+}
+.contentHead {
+    background: #ffe57f;
+    padding: 15px 5px;
+    margin: 0;
+    text-align: center;
+    color: #333;
+    text-transform: uppercase;
+}
+.catName {
+    background: #000;
+    bottom: 2px;
+    left: 0;
+    margin: 0 5px 0 0;
+    opacity: .5;
+    padding: 9px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+}
+@media all and (min-width:768px) {
+    .header {
+    z-index: 99;
+    background: #000;
+    margin: 0 -15px;
+    height: 45px;
+}
+.logo, .site_logo {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    left: 0;
+}
+.logo img, .site_logo img {
+    width: 45%;
+    margin: 50px 0 0;
+}
+.fbconnect {
+    text-align: center;
+}
+.fbconnect img {
+    width: 40%}
+#sidebar ul li a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+}
+.dealsContent {
+    margin: 0 0 0 2px;
+}
+.dealItem {
+    width: 33.3333%;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+}
+.formHeader a {
+    background: #000;
+    color: #fff;
+    padding: 5px;
+    float: left;
+    font-weight: 700;
+    width: 15%;
+    text-align: center;
+}
+.formHeader h1 {
+    float: left;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    width: 70%;
+    text-align: center;
+}
+}.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    background: #000;
+}
+.footer .col {
+    width: 50%;
+    float: left;
+    text-align: center;
+    color: #fff;
+    padding: 15px 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+.footer .reg {
+    border-right: solid 1px #333;
+}
+.footer .col span {
+    display: block;
+    font-size: 14px;
+    margin: 5px 0 0;
+}
+.formHeader a, .formHeader button, .formHeader fieldset[disabled] {
+    background: #000;
+    color: #fff;
+    padding: 7px 5px;
+    display: block;
+    font-size: 11px;
+    float: left;
+    font-weight: 700;
+    width: 20%;
+    text-align: center;
+    border-color: #000;
+}
+.formHeader button[disabled=disabled] {
+    background: #000;
+    border-color: #000;
+}
+.formHeader a:hover, .formHeader button:hover {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+}
+.frmCont .clsFrmField {
+    margin: 5px 0;
+    color: #fff;
+}
+.formHeader h1 {
+    float: left;
+    font-size: 16px;
+    margin: 0;
+    padding: 6px 0 0;
+    text-align: center;
+    text-transform: uppercase;
+    width: 60%;
+    font-weight: 700;
+}
+.fancybox-close {
+    display: none;
+}
+.fancybox-skin {
+    background: #ffe57f!important;
+}
+.frmCont {
+    margin: 10px 0 0;
+    text-align: center;
+}
+.regFormCont .genderLbl {
+    display: inline;
+}
+.headerInside {
+    text-transform: capitalize;
+}
+.headerInside a.menuToggle {
+    z-index: 99;
+}
+.headerInside .topLM {
+    float: left;
+    width: 15%;
+    text-align: center;
+    margin: 0 0 0 5px;
+    cursor: pointer;
+}
+.acctContent {
+    height: 100%;
+    background: #0f0;
+}
+.dealInfo {
+    background: #4e4e4e;
+    bottom: 0;
+    color: #d0b258;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    text-align: left;
+    text-transform: capitalize;
+}
+.dealInfo span {
+    color: #fff;
+}
+.dealInfo p {
+    margin: 0;
+    padding: 0;
+}
+.endingSoon {
+    position: absolute;
+    height: 100%;
+    right: 0;
+    top: 0;
+    background: url(../../assets/images/bg-ending.jpg) no-repeat #7b1f20;
+    overflow: visible;
+    padding: 8px 5px 0 15px;
+    color: #fff;
+    text-align: center;
+}
+.headerInside {
+    z-index: 99;
+    background: #000;
+    margin: 0 -15px;
+    height: 45px;
+}
+.headerInside a.menuToggle {
+    color: #fff;
+    position: relative;
+    top: 8px;
+    left: 10px;
+    float: left;
+}
+.headerInside .menuToggleLeft {
+    z-index: 6;
+    float: left;
+    width: 15%;
+    margin: 7px 0 0 5px;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+.headerInside .topRM {
+    float: left;
+    width: 15%;
+    text-align: center;
+}
+.headerInside .pageHeader {
+    z-index: 4;
+    float: left;
+    width: 100%;
+    position: absolute;
+    text-transform: uppercase;
+}
+.catList {
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(../images/inner_page_bg.png);
+    overflow-y: scroll;
+}
+.categoryLstHead {
+    background: #bda867;
+    color: #000;
+    margin: 0;
+    padding: 10px 5px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.catListItem {
+    text-align: center;
+    position: relative;
+    background: #c2c2c2;
+}
+.fullheight {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+.dealDetails {
+    position: relative;
+    background: url(../images/inner_page_bg.png);
+    overflow-y: scroll;
+}
+.dealDetails .dealsImage {
+    text-align: center;
+    background: #c2c2c2;
+}
+.dealFooter {
+    position: absolute;
+    bottom: 0;
+    width: 100%}
+.dealFooter .dealCol {
+    width: 50%;
+    float: left;
+    background: #262626;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+    font-weight: 700;
+}
+.dealFooter .dealCol a {
+    color: #fff;
+}
+.dealFooter .dealCol:first-child {
+    border-right: #000;
+}
+.dealItemDetail {
+    background: #4e4e4e;
+    padding: 15px;
+}
+.dealItemDetail h1 {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+.dealItemDetail p {
+    margin: 0;
+    padding: 0;
+}
+.xCol {
+    float: left;
+    width: 33.33%}
+.xCol p {
+    margin: 0;
+    padding: 0;
+    font-size: 11px;
+}
+.xPrice {
+    text-align: center;
+    font-weight: 700;
+    padding: 8px 0 0;
+}
+.cGold {
+    color: #d1b15a;
+}
+.dealExtra {
+    background: #4e4e4e;
+    border-top: solid 1px #333;
+    padding: 15px 0;
+}
+.dealTab ul {
+    margin: 0;
+    padding: 0;
+}
+.dealTab ul li.active {
+    background: #c2c2c2;
+}
+.dealTab ul li.active a {
+    color: #000;
+}
+.dealTab ul li {
+    float: left;
+    margin: 0;
+    padding: 5px;
+    width: 33.33%;
+    list-style: none;
+    text-align: center;
+    background: #999;
+}
+.dealTab ul li a {
+    color: #fff;
+}
+#dealRev, #dealTBi, #dealTDI {
+    display: none;
+    padding: 15px;
+    color: #000;
+}
+.acctname {
+    font-weight: 700;
+    padding: 0 0 5px;
+    font-size: 16px;
+    text-align: center;
+}
+.clsCatPage.contentHead {
+    color: #6f5810;
+}
+.dealsContent li {
+    padding: 8px 0;
+    background: #000;
+    border-bottom: 1px solid #cecece;
+}
+.dealsContent li:hover {
+    background: #d3bb70;
+}
+.dealsContent li a {
+    color: #FFF;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+}
+.dealsContent li:hover a {
+    color: #000;
+}
+.clsDealsHeader .clsDealRating .clsLabel a {
+    color: #FFF;
+    font-size: 10px;
+}
+.clsDealsHeader .clsDealTle {
+    padding: 5px 10px 5px 0;
+}
+.clsDealsHeader .clsDealsDesc {
+    padding: 5px 0;
+    line-height: 20px;
+    color: #ca3482;
+}
+.clsDealsHeader .clsDealTle a {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #691741;
+    text-decoration: none;
+}
+, .clsDealsHeader .left {
+    float: left;
+}
+.clsDealsHeader .right {
+    float: right;
+}
+.clsMobileDeals {
+    margin: 8px auto 0;
+    padding: 0;
+}
+.clsMobileDeals .dealImage {
+    position: relative;
+}
+.clsMobileDeals .clsPrice {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 30%;
+    text-align: right;
+    z-index: 1;
+}
+.clsMobileDeals .clsPrice .clsDealPrice {
+    position: absolute;
+    color: #FFF;
+    background: #df2264;
+    padding: 10px;
+    right: 0;
+}
+.clsMobileDeals .clsPrice .clsDealPrice .clsPriceVal {
+    font-size: 35px;
+    letter-spacing: -3px;
+}
+.clsMobileDeals .clsPrice .clsDealPrice .clsCurrencyVal {
+    font-size: 18px;
+}
+.clsMobileDeals .clsDealViewFlexSlider {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+}
+.clsMobileDeals .clsDealViewFlexSlider .clsDealView {
+    background: #df2264;
+    bottom: 0;
+    padding: 10px;
+    position: relative;
+    width: 100%}
+.clsMobileDeals .clsDealViewFlexSlider .clsDealView a {
+    font-size: 18px;
+    text-align: center;
+    display: block;
+    color: #FFF;
+    width: 100%;
+    text-transform: uppercase;
+}
+.clsMobileDeals .clsTimeDiscount {
+    background: #ffc0d4;
+    padding: 10px 0;
+}
+.clsMobileDeals .clsTimeDiscount .clsLabel {
+    color: #db427b;
+    font-size: 12px;
+    padding: 0 0 5px;
+    text-align: center;
+}
+.clsMobileDeals .clsTimeDiscount .clsDealBought, .clsMobileDeals .clsTimeDiscount .clsDealDiscount, .clsMobileDeals .clsTimeDiscount .clsDealTimeLeft {
+    padding: 0 8px;
+}
+.clsMobileDeals .clsTimeDiscount .clsDealView {
+    padding: 15px 0 0 15px;
+}
+.clsMobileDeals .clsTimeDiscount .clsTimeCounter {
+    font-size: 12px;
+    padding: 2px 10px;
+    background: 0 0;
+    text-align: center;
+    display: block;
+    color: #fff;
+}
+.clsMobileDeals .clsTimeDiscount .clsValues {
+    font-size: 12px;
+    margin: 0;
+    text-align: center;
+    color: #fff;
+}
+.clsMobileDeals .clsDealsShareOpt {
+    padding: 10px;
+    background: #000;
+}
+.clsMobileDeals .clsDealsShareOpt .clsShareDealLbl {
+    color: #FFF;
+    font-size: 10px;
+}
+.clsMobileDeals .clsDealsShareOpt .clsaddFavourites .addFav {
+    background: url(../images/add_favourites.png) no-repeat;
+    display: block;
+    height: 22px;
+    width: 22px;
+    margin: 0 5px 0 0;
+}
+.clsMobileDeals .clsDealsShareOpt .clsaddFavourites .addFav.wishlist-remove {
+    background: url(../images/at_deals_like_onclick.png) no-repeat;
+}
+.clsMobileDeals .clsDealsShareOpt .clsaddFavourites .clsLikeCount {
+    font-size: 14px;
+    color: #FFF;
+    padding: 3px 0 0;
+}
+.clsMobileDeals .clsMerchantDetails {
+    background: #fff;
+    border-bottom: 1px dashed #000;
+}
+.clsMobileDeals .clsMerchantLocation {
+    color: #db427b;
+    padding: 20px 10px;
+}
+.clsMobileDeals .clsHowItWorks .clsLabel {
+    margin: 10px 0;
+}
+.clsMobileDeals .clsHowItWorks {
+    color: #691741;
+    background: #FFF;
+    padding: 10px;
+    border-bottom: 1px dashed #000;
+    margin: 0 0 10px;
+}
+.clsMobileDeals .getDirection {
+    background: #FFF;
+    border-bottom: 1px dashed #000;
+    padding: 10px;
+    text-align: center;
+}
+.clsMobileDeals .clsMerchantLocation .clsAddress {
+    background: url(../images/address_icon.png) center left no-repeat;
+    padding: 0 0 0 50px;
+    margin: 20px 0 0 30px;
+    font-size: 12px;
+}
+.clsMobileDeals .clsMerchantAddress .clsMerchantLogo {
+    margin: 55px 0 25px;
+}
+.clsMobileDeals .clsMerchantLocation .clsLabel {
+    font-weight: 700;
+}
+.feed-message {
+    padding: 20px;
+    min-height: 200px;
+    color: #FFF;
+    background: #CA3482;
+    text-align: center;
+}
+.feed-message h3 {
+    line-height: 30px;
+    font-size: 24px;
+    color: #FFF;
+}
+.feed-message h5 {
+    font-size: 20px;
+    color: #FFF;
+}
+.dealImage img {
+    width: 100%;
+    height: auto;
+}
+#starRating, .star {
+    width: 100px;
+    left: 54px;
+    position: absolute;
+}
+.clsRatingContainer {
+    display: none;
+    width: 200px;
+    height: 94px;
+    background: url(../images/rating_bg.png) no-repeat;
+    position: absolute;
+    right: 18px;
+    z-index: 3;
+}
+.rateThisDeal {
+    top: 40px!important;
+}
+.clsDealRating .clsRatingImg img {
+    cursor: pointer;
+}
+.clsRatingContainer .clsRatingDesc {
+    width: 150px;
+    font-size: 11px;
+    margin: 0 auto;
+    padding: 33px 0 3px;
+    color: #6f5810;
+    text-align: center;
+}
+.clsRatingContainer .closeRate {
+    display: block;
+    font-size: 10px;
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    top: 30px;
+    right: 0;
+    text-align: center;
+    cursor: pointer;
+}
+p.error {
+    color: red;
+    margin: 0;
+}
+#popFromLeft {
+    background: url(../images/inner_page_bg.png) fixed;
+}
+.clsBuyDealHead {
+    background: #3cacc0;
+    color: #FFF;
+    font-size: 20px;
+    text-align: left;
+    padding-left: 30px;
+}
+.dealBuyDetail {
+    background: #fff;
+    padding: 10px 0;
+    color: #000;
+}
+.dealBuyDetail .clsDealDesc {
+    padding: 0 0 0 15px;
+}
+.dealBuyDetail .clsDealDesc .clsDealTle {
+    color: #691741;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin: 0 0 5px;
+    padding: 0;
+}
+.buyDetails .clsDealThmbImg {
+    margin: 20px 0 0;
+}
+.buyDetails .clsDealPriceDisplay {
+    background: #CA3482;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 20px;
+    margin: 15px 0;
+    padding: 10px;
+    text-align: center;
+    width: 90%}
+.dealBuyDetail .clsDealDesc .clsSmallDesc {
+    margin: 0 0 5px;
+    line-height: 25px;
+    padding: 0;
+    color: #691741;
+}
+.dealBuyDetail .clsDealQty select {
+    padding: 5px;
+    width: 90%;
+    color: #DF2264;
+}
+.buyDetails .clsBuyOpt {
+    padding: 20px;
+    background: #691741;
+    line-height: 30px;
+}
+.buyDetails .clsBuyBtn {
+    text-align: center;
+    margin: 10px 0;
+}
+.buyDetails .clsBuyBtn .clsSubmitbtn {
+    background-image: linear-gradient(to bottom,rgb(65,170,224),rgb(66,116,185));
+    padding: 10px 20px;
+    border: none;
+    color: #FFF;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+.buyDetails .clsSelectLoading, .clsFrmLoading {
+    display: none;
+}
+.buyDetails label {
+    display: inline;
+    color: #fff;
+}
+.clsUserMenuNav li {
+    border-bottom: 1px solid #FFF;
+}
+.clsUserMenuNav li a.userNav {
+    display: block;
+    padding: 10px 50px 10px 10px;
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 14px;
+    background: url(../images/AT_Plus_Dropdown.png) 95% center no-repeat #000;
+}
+.clsUserMenuNav li a.close {
+    background-image: url(../images/AT_Minus_Dropdown.png);
+}
+.clsUserRowWrapperUsername {
+    background: #691741;
+    padding: 10px;
+    color: #fff;
+}
+.clsUserRowWrapper .clsUserRow, .clsUserRowWrapperUsername .clsUserRow {
+    margin: 5px 0;
+}
+.clsPersonalInfoField {
+    padding: 0 10px;
+    background: #CA3482;
+    display: none;
+}
+.clsPersonalInfoField form {
+    margin: 0;
+}
+#userPersonalInfo .clsGender label {
+    display: inline;
+    color: #FFF;
+    font-size: 14px;
+}
+.clsPersonalInfoField .subHeads {
+    font-size: 14px;
+    padding: 10px 0;
+    font-weight: 700;
+    color: #fff;
+}
+.clsPersonalInfoField .clsSubmit {
+    padding: 0 0 20px;
+}
+.clsPersonalInfoField .clsSubmitBtn {
+    background-image: linear-gradient(to bottom,rgb(65,170,224),rgb(66,116,185));
+    box-shadow: 5px 5px 20px #404041;
+    border-radius: 7px;
+    border: none;
+    color: #FFF;
+    padding: 10px;
+    font-size: 20px;
+}
+.clsPersonalInfoField .clsFrmField {
+    margin: 5px 0;
+    color: #fff;
+}
+.clsPersonalInfoField .clsInput input[type=password], .clsPersonalInfoField .clsInput input[type=text], .clsPersonalInfoField .clsInput select {
+    width: 100%;
+    margin: 0;
+}
+#userEmailPreferences label {
+    color: #fff;
+}
+.clsPersonalInfoField .res_message {
+    border: 1px solid #000;
+    margin: 10px 0;
+    display: none;
+    padding: 5px;
+    text-align: center;
+    font-weight: 14px;
+}
+.clsPersonalInfoField .res_message.error {
+    color: red;
+    border-color: red;
+}
+.clsPersonalInfoField .res_message.success {
+    color: #090;
+    border-color: #090;
+}
+.payWrapper {
+    background: #CA3482;
+    position: relative;
+}
+.payWrapper .whiteBg {
+    background: url(../images/inner_page_bg.png) repeat-x;
+}
+.payWrapper .clsMessage {
+    color: #000;
+}
+.payWrapper .clsMessage h2 {
+    padding: 10px;
+    text-align: center;
+    font-weight: 400;
+    width: 90%;
+    margin: 0 auto;
+}
+.payWrapper .clsMessage p {
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    text-align: center;
+    width: 85%}
+.payWrapper .userPoints {
+    background: #000;
+    padding: 10px;
+    text-align: center;
+    color: #fff34b;
+    font-size: 20px;
+}
+.payWrapper .footerMsg {
+    margin: 10px auto;
+    text-align: center;
+    width: 90%}
+.payWrapper .footerMsg p {
+    font-size: 14px;
+    color: #fff;
+}
+.buyMore {
+    position: absolute;
+    text-align: center;
+    width: 100%}
+.buyMore a {
+    height: 70px;
+    display: block;
+    background: url(../assets/images/shop_more.png) center center no-repeat;
+}
+.goHome {
+    text-align: center;
+    margin: 10px 20px;
+}
+.goHome a {
+    display: block;
+    padding: 10px;
+    background: #000;
+    color: #FFF;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+#user_points, .clsMyPurchases {
+    background: #FFFFFF;
+    color: #691741;
+}
+#user_points .clsUserRowWrapper {
+    border-bottom: 1px dashed #fff;
+    padding: 10px;
+}
+#user_points .clsUserRowWrapper .subHeads {
+    font-size: 16px;
+    margin: 0 0 10px;
+}
+#user_points .clsLevelHeader, #user_points .clsMyTotalPoints .clsUserRow, #user_points .clsUserMypoints .clsUserRow {
+    background: #F1F1F2;
+    padding: 5px 0 5px 10px;
+}
+#user_points .clslevelPoints {
+    background: #F1F1F2;
+    position: relative;
+}
+#user_points .clslevelPoints .clsLevelSpend, #user_points .clslevelPoints .clsPointsUnlocked {
+    padding: 0 0 0 5px;
+}
+.clsLevelLock {
+    background: url(../images/level_lock.png) center center no-repeat rgba(0, 0, 0, .7);
+    background-size: 30%;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+.clsMyPurchases .clsUserPurchasedDeal {
+    width: 90%;
+    padding: 10px;
+    background: #F1F1F2;
+    margin: 5px auto;
+}
+.clsMyPurchases .clsUserPurchasedDeal .clsDealDesc {
+    padding: 0 0 0 20px;
+}
+.clsMyPurchases .clsUserPurchasedDeal .clsDealTle {
+    font-weight: 700;
+    margin: 0 0 5px;
+}
+.clsMyPurchases .clsUserPurchasedDeal .clsDealDesc p {
+    margin: 10px 0;
+    font-size: 12px;
+}
+.clsMyPurchases .clsUserPurchasedDeal .clsDealDesc p a {
+      background-image: linear-gradient(to bottom, rgb(65, 170, 224), rgb(66, 116, 185));
+      padding: 5px;
+      color: #fff;
+      font-size: 15px;
+      border-radius: 5px;
+      text-decoration: none;
+}
+.clsMyPurchases .clsNoUserDeals {
+    padding: 10px;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.regFormCont .clsFormField .clsInLabel {
+    margin: 0 0 5px;
+}
+.regFormCont .clsFormField.clsGender {
+    margin: 0 0 15px;
+}
+.regFormCont #selected_city {
+    margin: 0 0 10px;
+}
+.thankspage h1 {
+    font-size: 24px;
+    margin: 10px 0 0;
+    padding: 0;
+    font-weight: 400;
+}
+.thankspage p {
+    margin: 5px 0;
+    padding: 0;
+    line-height: 22px;
+    color: #000;
+}
+.thankspage ul {
+    list-style: disc;
+    margin: 0 0 0 20px;
+    color: #000;
+}
+.btnRefer {
+    padding: 5px;
+    text-align: center;
+    background: #f8fcfe;
+    color: #999;
+    margin: 5px 0;
+}
+.socialIcon {
+    text-align: center;
+    margin: 5px 0;
+}
+.socialIcon a {
+    width: 64px;
+    height: 63px;
+    background: url(../images/soc-btns.png) no-repeat;
+    overflow: hidden;
+    display: inline-table;
+    text-indent: -500px;
+}
+.socialIcon a.twit {
+    background-position: -78px 0;
+}
+.socialIcon a.eml {
+    background-position: -156px 0;
+}
+.tc a {
+    text-decoration: underline;
+    color: #000;
+    font-size: 11px;
+}
+.search {
+    position: relative;
+}
+.search div.error {
+    position: absolute;
+    background: #FFF;
+    color: red;
+    left: 8px;
+    padding: 9px 10px;
+    top: 0;
+    width: 98%}
+.loading-spinner {
+    color: #FFF;
+}
+.clsMoh {
+    margin: 10px 0;
+}
+.clsMoh .clsMohLicenceNo {
+    font-weight: 700;
+    margin: 10px 0;
+}
+.clsMobileDeals .clsDealDesc p strong, .clsMobileDeals .clsHowItWorks .clsLabel {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+}
+.clsOffers h1 {
+    border-bottom: 1px dashed #ccc;
+    padding: 0 0 5px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+    color:#DB427B;
+}
+#dealOptionOverlay .clsMultideal {
+    padding: 12px 0;
+}
+#dealOptionOverlay .multiDealheadline, #dealRatingOverlay .multiDealheadline {
+    color: #fff;
+    font-size: 21px;
+    font-weight: 700;
+    padding: 10px 12px 10px 0;
+    text-transform: uppercase;
+    position: relative;
+}
+#dealOptionOverlay .multiDealheadline .closeBtn {
+    height: 20px;
+    width: 20px;
+    display: block;
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    cursor: pointer;
+}
+#dealRatingOverlay .closeBtn {
+    height: 20px;
+    width: 20px;
+    display: block;
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 30px;
+}
+#dealOptionOverlay .multiDealheadlineLeft {
+    background: #000;
+    border-radius: 0 10px 10px 0;
+    color: #fff;
+    float: left;
+    font-size: 15px;
+    font-weight: 700;
+    height: 20px;
+    margin-right: 13px;
+    margin-top: 1px;
+    padding: 7px 10px 5px 3px;
+    position: relative;
+}
+.genPopupNoBorder {
+    background: #CA3482;
+    border: 0;
+    border-radius: 11px;
+}
+#dealRatingOverlay .genPopupNoBorder {
+    position: relative;
+    width: 80%;
+    color: #fff;
+    padding: 10px;
+    margin: 0 auto;
+}
+#dealOptionOverlay .multiDealPrice {
+    color: #fff;
+    float: right;
+    font-size: 13px;
+    font-weight: 700;
+    margin-right: 18px;
+    margin-top: 3px;
+    padding-right: 12px;
+    text-align: right;
+}
+#dealOptionOverlay .multiDealPrice span {
+    display: block;
+    font-size: 16px;
+    white-space: nowrap;
+}
+#dealOptionOverlay .buybutton {
+    background-image: linear-gradient(to bottom,rgb(65,170,224),rgb(66,116,185));
+    border-radius: 8px;
+    color: #FFF;
+    display: block;
+    float: right;
+    margin-right: 20px;
+    width: 35%;
+    text-align: center;
+    margin-top: 8px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+}
+#dealOptionOverlay .multiDealList {
+    margin-top: 10px;
+}
+#dealOptionOverlay .multiDealFooter {
+    clear: both;
+    padding: 12px 12px 5px;
+}
+#dealOptionOverlay .overlay-background {
+    background-color: rgba(0, 0, 0, .9);
+}
+#dealOptionOverlay .ovelayOption, #loginOverlay .regFormCont, #referFriend .shareLinkwrapper, #registerOverlay .regFormCont {
+    background: #CA3482;
+    border-radius: 11px;
+    color: #fff;
+}
+#loginOverlay .overlay-background, .overlay-background {
+    background-color: rgba(0, 0, 0, .8)!important;
+}
+#loginOverlay .overlay-dismiss, #registerOverlay .overlay-dismiss,#appointmentOverlay .overlay-dismiss {
+    color: #DB427B;
+}
+#loginOverlay .overlay-dismiss i, #referFriend .overlay-dismiss i, #registerOverlay .overlay-dismiss i {
+    font-size: 30px;
+}
+#loginOverlay .regFormCont, #referFriend .shareLinkwrapper, #registerOverlay .regFormCont {
+    padding: 20px;
+}
+#dealOptionOverlay .overlay-dismiss, #dealRatingOverlay .overlay-dismiss, #referFriend .overlay-dismiss {
+    color: #bca24f;
+    display: none;
+}
+#dealOptionOverlay .overlay-dismiss i {
+    font-size: 2em;
+}
+#referFriend .shareLinkwrapper {
+    text-align: left;
+}
+#referFriend .shareLinkwrapper h3{
+    color: #fff;
+}
+#referFriend #refLinkTxt {
+    width: 90%}
+#referFriend .shareIcons {
+    margin: 10px 0;
+    text-align: center;
+}
+#referFriend .shareIcons a {
+    color: #000;
+    display: inline-block;
+    margin: 0 10px;
+}
+#referFriend .btn-primary {
+    background-image: linear-gradient(to bottom,rgb(65,170,224),rgb(66,116,185));
+    float: right;
+    border: none;
+}
+#referFriend .reffNote a {
+    color: #fff;
+    text-decoration: underline;
+}
+.clsSelectOption {
+    margin: 0;
+    padding: 0;
+}
+.clsSelectOption li {
+    list-style: none;
+    background: #ffc0d4;
+    border-bottom: 1px solid #DB427B;
+    clear: left;
+    padding: 1px 0 4px;
+    width: 100%;
+    color: #fff;
+    text-align: left;
+}
+.clsSelectOption a {
+    color: #DB427B;
+    text-decoration: none;
+}
+@media(max-width:600px) {
+    .clsMobileDeals .clsPrice .clsDealPrice .clsCurrencyVal {
+    font-size: 12px;
+}
+.clsMobileDeals .clsPrice .clsDealPrice .clsPriceVal {
+    font-size: 18px;
+    letter-spacing: 0;
+}
+.clsTimeDiscount .clsDealBought, .clsTimeDiscount .clsDealDiscount {
+    width: 30%}
+.clsMobileDeals .clsTimeDiscount .clsTimeCounter {
+    clear: both;
+}
+.clsMobileDeals .clsMerchantAddress, .clsMobileDeals .clsMerchantLocation {
+    float: none;
+}
+.clsMobileDeals .clsMerchantAddress .clsMerchantLogo {
+    text-align: center;
+}
+#dealOptionOverlay .buybutton {
+    float: none;
+    text-align: center;
+}
+.clsPersonalInfoField .clsFrmField .clsFloatLeft {
+    float: none;
+}
+.clsEmailFrequency{
+    color: #fff;
+}
+.clsEmailFrequency .clsFrmField .clsFloatLeft {
+    float: left;
+}
+.clsEmailFrequency .clsFrmField .clsInput {
+    padding: 0 0 0 10px;
+    width: 12%}
+.clsEmailFrequency .clsFrmField .clsLabel {
+    width: 80%}
+.clsBuyOpt .clsOpt {
+    padding: 0!important;
+}
+.clsBuyOpt .clsOptVal {
+    padding: 0 0 0 10px!important;
+    width: 90%}
+.clsDealView .col-lg-6 {
+    width: 50%;
+    float: left;
+}
+.clsDealView .col-lg-6 a {
+    font-size: 14px!important;
+}
+}@media only screen and (orientation:landscape) {
+    .logo img, .site_logo img {
+    width: 32%}
+}#mainSidebar .userLogedIn {
+    margin: 10px 0;
+    color: #fff;
+}
+.myAccountPage {
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+#myAccount .panel-default {
+    border-color: #FFF;
+}
+#myAccount .panel-default>.panel-heading {
+    background-color: #691741;
+    border-color: #000;
+}
+#myAccount .panel-default>.panel-heading h4 {
+    color: #fff;
+    font-family: helvetica;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+#myAccount input[type=date], #myAccount input[type=datetime], #myAccount input[type=email], #myAccount input[type=number], #myAccount input[type=password], #myAccount input[type=search], #myAccount input[type=tel], #myAccount input[type=text], #myAccount input[type=time], #myAccount input[type=url], #myAccount textarea {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .1) inset;
+    color: rgba(0, 0, 0, .75);
+    display: block;
+    font-family: inherit;
+    font-size: 14px;
+    height: 32px;
+    padding: 6px;
+    transition: all .15s linear 0s;
+    width: 100%}
+.clsPersonalInfoField .messageContainer {
+    padding: 10px 0;
+}
+.clsPersonalInfoField .messageContainer .alert-error, .clsPersonalInfoField .messageContainer .alert-success {
+    text-align: center;
+}
+.clsEmailFrequency .clsFrmField .clsInput {
+    text-align: right;
+}
+.clsPersonalInfoFrm .clsLabel, .clsPersonalInfoFrm .subHeads {
+    color: #fff;
+}
+#myAccount .ng-dirty input.ng-invalid, #myAccount input.ng-invalid, #myAccount textarea.ng-invalid, .ng-dirty input.ng-invalid, input.ng-invalid, textarea.ng-invalid {
+    border-color: red;
+}
+p.help-block {
+    color: red;
+}
+.alert-error, .alert-success {
+    margin: 0 auto;
+    padding: 5px;
+    width: 90%}
+.alert-error {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+}
+.currentLevel {
+    color: red;
+    margin: 10px;
+}
+.btn-more {
+    background-image: linear-gradient(to bottom,rgb(65,170,224),rgb(66,116,185));
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 200%;
+    margin: 10px auto 0;
+    padding: 20px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all .2s linear 0s;
+    width: 220px;
+}
+.clsLoadMore {
+    text-align: center;
+    margin: 10px 0;
+}
+.preloaderImg {
+    text-align: center;
+}
+.preloaderImg .loading-spinner {
+    left: 0;
+    right: 0;
+    margin: 10px;
+    position: relative;
+    top: 0;
+}
+.sidebar-left {
+    /*background: url(../images/AT_side_bar.jpg) center center no-repeat!important;*/
+    -webkit-background-size: cover!important;
+    -moz-background-size: cover!important;
+    -o-background-size: cover!important;
+    background-size: cover!important;
+}
+.btn-more:hover {
+    text-decoration: none;
+    color: #FFF;
+}
+.buyDetails .dealsOptions {
+    margin: 10px 0;
+}
+.buyDetails .item_qtyLbl {
+    padding: 0;
+    font-weight: 700;
+    color: #691741;
+}
+.multiDealRight .buybutton, .multiDealTitle a {
+    cursor: pointer;
+}
+.clsFaq {
+    margin: 10px 0;
+}
+.clsFaq .clsQuestion:before {
+    content: "-";
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+.clsFaq .clsQuestion {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+}
+.clsFaq .clsAnswer {
+    margin: 0 0 0 20px;
+    font-style: italic;
+}
+.clsCategory .list-group-items {
+    display: block;
+    background-color: #691741;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-bottom: 1px solid #ddd;
+    text-transform: uppercase;
+}
+.clsCategory .list-group-item {
+    text-transform: uppercase;
+    background: #691741;
+    color: #fff;
+    border-color: #FFF;
+}
+.clsCategory .list-group-item:hover {
+    background: #DB427B;
+}
+.clsCategory .clsSoon {
+    color: #FFA8C8;
+    display: block;
+    font-size: 10px;
+    width: 100px;
+}
+.clsCategory .fa.fa-chevron-right {
+    position: relative;
+    right: 15px;
+    top: 34%}
+.cls30ExchangeDiv {
+    text-align: center;
+}
+.cls30ExchangeDiv i {
+    display: block;
+    margin: 10px 0;
+}
+.cls30Exchange {
+    margin: 0 auto;
+    width: 200px;
+}
+.clslevelPoints {
+    padding: 10px;
+    text-align: center;
+}
+.appointment-overlay p a.btn,.appointment-overlay p span.btn,#BuyLoginForm .btn-primary, #LoginForm .btn-primary, #buyRegisterFrm .btn-primary, #registerFrm .btn-primary {
+    color: #fff;
+    background-image: linear-gradient(to bottom,rgb(65,170,224),rgb(66,116,185));
+    box-shadow: 5px 5px 20px #404041;
+    border-radius: 7px;
+    border: 0;
+    margin-top: 5px;
+}
+.formDesc {
+    margin: 20px 0 0;
+}
+.accept_terms_box a, .formDesc a {
+    color: #fff;
+    cursor: pointer;
+}
+#BuyLoginForm h1, #LoginForm h1, #buyRegisterFrm h1, #registerFrm h1 {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    margin: 20px 0;
+    color: #fff;
+}
+.app-body {
+    background: #FEFEFE;
+}
+.carousel-inner .item1 {
+    background-image: url(../images/home_slider_1.jpg);
+    background-position: center center;
+}
+.carousel-inner .item2 {
+    background-image: url(../images/home_slider_2.jpg);
+    background-position: right center;
+}
+.carousel-inner .item3 {
+    background-image: url(../images/home_slider_3.jpg);
+    background-position: center center;
+}
+@media(max-width:600px) {
+    .carousel-inner .item1 {
+    background-image: url(../images/home_slider_1_mobile.jpg);
+}
+.carousel-inner .item2 {
+    background-image: url(../images/home_slider_2_mobile.jpg);
+}
+.carousel-inner .item3 {
+    background-image: url(../images/home_slider_3_mobile.jpg);
+}
+}.smallFont {
+    font-size: 12px;
+}
+.clsDesktop {
+    display: none;
+}
+.clsPageDesc .clsFaqPage h1{
+    color: white;
+}
+.clsPageDesc a {
+    color: #fff;
+    text-decoration: underline;
+}
+.carousel-inner .item {
+    background-repeat: no-repeat!important;
+    -webkit-background-size: cover!important;
+    -moz-background-size: cover!important;
+    -o-background-size: cover!important;
+    background-size: cover!important;
+}
+.carousel-inner .clsOptions {
+    position: absolute;
+    width: 100%;
+    z-index: 9999;
+    top: 50%}
+.carousel-inner .clsOptions a {
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    height: 50px;
+    width: 50px;
+}
+.carousel-inner .clsOptions a.clsPrev {
+    left: 10px;
+}
+.carousel-inner .clsOptions a.clsNext {
+    right: 10px;
+}
+.subHeads {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 15px;
+    text-transform: uppercase;
+}
+.clsPartnerForm {
+    margin: 10px 0 0;
+}
+.clsPartnerForm .clsFormField {
+    margin: 5px 0;
+    position: relative;
+}
+.clsPartnerForm .clsFormField .clsLabel {
+    color: #FFF;
+    margin: 0 0 5px;
+    font-style: italic;
+}
+#business_type, .clsPartnerForm .clsText {
+    width: 90%;
+    padding: 5px;
+    border-radius: 5px;
+}
+.clsPartnerForm #country_code, .clsPartnerForm #state_code {
+    padding: 5px;
+    border-radius: 5px;
+}
+.clsPartnerForm #mobile_no {
+    width: 100px;
+}
+.clsPartnerForm .subHeads {
+    color: #FFF;
+}
+.screen-reader-response ul {
+    display: none;
+}
+span.wpcf7-not-valid-tip {
+    display: block;
+    color: red;
+}
+.mobile_no .wpcf7-not-valid-tip {
+    left: 0;
+    position: absolute;
+    top: 60px;
+}
+.country_code .wpcf7-not-valid-tip, .state_code .wpcf7-not-valid-tip {
+    display: none;
+}
+span.wpcf7-form-control-wrap {
+    display: block!important;
+}
+span.country_code, span.mobile_no, span.state_code {
+    display: inline-block!important;
+}
+.clsPartnerForm #partner_submit {
+    background-image: linear-gradient(to bottom,rgb(65,170,224),rgb(66,116,185));
+    border-radius: 7px;
+    box-shadow: 5px 5px 20px #404041;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 25px;
+    margin: 30px auto 0;
+    padding: 4px;
+    text-align: center;
+    text-decoration: none;
+    transition: all .2s linear 0s;
+    width: 130px;
+    border: none;
+}
+.discountTag {
+    background: #000;
+    bottom: 45px;
+    color: #fff;
+    font-size: 16px;
+    padding: 5px;
+    position: absolute;
+    right: 0;
+    z-index: 99;
+    display: none;
+}
+.discountTag span {
+    color: #fff;
+    text-transform: uppercase;
+}
+.afterclsDiscount {
+    color: #000;
+}
+.afterclsDiscount .clsNow {
+    display: block;
+}
+#lightbulb {
+    font-size: 100px;
+    display: block;
+    text-align: center;
+}
+h1 {
+    padding: 0;
+    margin: 10px 0;
+}
+.chat-user-avatar {
+    font-size: 40px;
+    background: #ccc;
+    padding: 5px 10px;
+}
+.feature-icon {
+    font-size: 44px;
+    padding: 0;
+    line-height: 64px;
+    width: 64px;
+    text-align: center;
+    opacity: .8;
+}
+.app-content-loading {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.loading-spinner {
+    position: absolute;
+    font-size: 50px;
+    left: 50%;
+    top: 50%;
+    margin-left: -25px;
+    margin-top: -25px;
+}
+.carousel-example-content {
+    position: absolute;
+    font-size: 50px;
+    line-height: 50px;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    margin-top: -50px;
+}
+.carousel .item {
+    color: #444;
+    background-color: #f4f4f4;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .5);
+}
+.carousel {
+    padding: 20px;
+    overflow: visible;
+}
+.carousel-inner {
+    position: relative;
+    overflow: visible;
+}
+.carousel-inner>.item {
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%}
+.carousel-inner>.item:first-child {
+    z-index: 1998;
+}
+.carousel-inner>.item.active {
+    z-index: 2000;
+}
+.carousel-inner>.item.active+.item {
+    z-index: 1999;
+}
+.clsBuyOpt .panel.panel-default {
+    border-color: #000;
+}
+.clsBuyOpt .panel .panel-heading {
+    background: #000;
+    color: #fff;
+    border-radius: 0;
+}
+.clsBuyOpt .panel .panel-title {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.clsBuyOpt .panel .panel-body {
+    background: #bca250;
+}
+.clsSignDesc {
+    color: rgb(66,116,185);
+    font-size: 10px;
+    font-weight: 400;
+    text-transform: none;
+    padding: 10px 0;
+}
+#user_points .myaccount .clsValue {
+    text-align: right;
+}
+.form-control {
+    border-radius: 5px;
+}
+.clsForms {
+    background: #CA3482;
+    border: 1px solid #CA3482;
+    border-radius: 10px;
+    color: #fff;
+}
+.clsForms label {
+    color: #fff;
+    font-size: 10px;
+    text-align: left;
+    display: block;
+}
+.clsForms #BuyLoginForm .btn-primary, .clsForms #buyRegisterFrm .btn-primary {
+    background-image: linear-gradient(to bottom,rgb(65,170,224),rgb(66,116,185));
+    color: #fff;
+}
+.clsForms label a {
+    color: #fff;
+}
+.clsForms .formDesc {
+    margin: 10px 0 0;
+}
+.clsForms .clsHaveAccount {
+    margin: 10px auto;
+    width: 100%}
+.clsForms .accept_terms_box .clsOpt {
+    margin: 0 0 0 10px;
+}
+.clsForms .accept_terms_box .clsOptVal {
+    margin: 9px 0 0 0;
+}
+.clsForms .clsHaveAccount a {
+    text-decoration: none;
+    border-radius: 5px;
+    background-image: linear-gradient(to bottom,rgb(65,170,224),rgb(66,116,185));
+    display: block;
+    float: left;
+    line-height: 20px;
+    margin: 0 0 0 10px;
+    padding: 2px;
+    text-align: center;
+    width: 75px;
+    color: #fff;
+}
+.clsForms .clsText, .clsForms .clsText a {
+    color: #fff;
+}
+#BuyAsGiftFrm {
+    padding: 10px;
+}
+#BuyAsGiftFrm .clsLabel {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+}
+#BuyAsGiftFrm label, #registerFrm .regFormCont {
+    color: #fff;
+}
+#BuyAsGiftFrm .clsFrmField {
+    margin: 10px 0;
+}
+#BuyAsGiftFrm .clsInput {
+    padding: 0;
+}
+#BuyAsGiftFrm .clsTxt {
+    margin: 10px 0;
+    width: 100%}
+#atRedeemAlert, #make50paymentAlert {
+    color: #DB427B;
+}
+.getDirection a.dealDetailsMapDirection {
+    margin-top: 10px;
+    background-image: linear-gradient(to bottom,rgb(65,170,224),rgb(66,116,185));
+    box-shadow: 5px 5px 20px #404041;
+    border-radius: 7px;
+    border: 0px;
+    padding: 2%;
+    text-transform: uppercase;
+    font-size: 22px;
+}
+/*ATVIN new design style*/
+.clsDealsHeader {
+    padding: 8px 5px;
+    text-align: center;
+    background-image: linear-gradient(to bottom,rgb(226, 226, 226),rgb(255, 255, 255));
+}
+.atDealsListMain .atDealsListFooter{
+    background: #CA3482;
+    margin: -5px 0 15px 0;
+    color: #fff;
+    box-shadow: 8px 8px 8px rgba(0,0,0,0.3);
+}
+.atDealsListMain .atDealsListFooter span.clsCurrencyVal,.atDealsListMain .atDealsListFooter span.clsPriceVal,.atDealsListMain .atDealsListFooter span.clsTotalBought{
+    font-size: 22px;
+    line-height: 100%;
+}
+.atDealsListMain .atDealsListFooter.atDealDetailsPage span.clsCurrencyVal,.atDealsListMain .atDealsListFooter.atDealDetailsPage span.clsPriceVal,.atDealsListMain .atDealsListFooter.atDealDetailsPage span.clsTotalBought{
+    font-size: 32px;
+    line-height: 100%;
+}
+.atDealsListMain .atDealsListFooter .clsDealsListViewBtn a{
+    color: #fff;
+    background-image: linear-gradient(to bottom,rgb(65,170,224),rgb(66,116,185));
+    padding: 8px;
+    font-size: 32px;
+    border-radius: 7px;
+    box-shadow: 5px 5px 20px #404041;
+    text-decoration: none;
+}
+.atDealsListMain .atDealsViewDiv a{
+    text-decoration: none;
+    color: #fff;
+}
+.atDealsListMain .atDealsViewDiv{
+    margin: -5px 0 5px 0;
+    position: relative;
+    z-index: 111111111;
+    background: #CA3482;
+    box-shadow: none;
+}
+.atDealsListMain .atDealsViewDiv .clsDealsListViewBtnBuy a,
+.atDealsListMain .atDealsViewDiv .clsDealsListViewBtnBuyGift a{
+    background-image: linear-gradient(to bottom,rgb(65,170,224),rgb(66,116,185));
+    width: 80%;
+    margin-left: 10%;
+    display: block;
+    height: 60px;
+    box-shadow: 5px 5px 20px #404041;
+    border-radius: 7px;
+}
+.atDealsListMain .atDealsViewDiv .clsDealsListViewBtnBuy a{
+    padding-top: 10px;
+    margin-top: -25px;
+    font-size: 15px;
+    font-weight: 600;
+}
+.atDealsListMain .atDealsViewDiv .clsDealsListViewBtnBuyGift a{
+    padding-top: 5px;
+    font-size: 24px;
+    margin-top: -25px;
+    line-height: 25px;
+}
+.list.placecodCls .item-input,.list.bookappointCls .item-input{
+    padding: 5px 16px;
+    border: none;
+}
+.list.atdeliverydetailsCls .item-input{
+    padding: 5px 2px;
+    border: none;
+}
+.list.atdeliverydetailsCls .item-input .input-label,.list.bookappointCls .item-input .input-label,.list.placecodCls .item-input .input-label{
+    color: #fff;
+}
+.appointment-overlay h4.overlay-title{color: #fff;}
+div.appointment-overlay{background-color: #C83482;border-radius: 30px;padding-top: 20px;padding-bottom: 20px;color:#fff;}
+input[type=date].bookappointmentInputCls{ border: 1px solid #CA3482;  text-align: center;
+  font-size: 16px;color: #CA3482}
+select.bookappointmentSelectCls{border: 1px solid #CA3482;
+  font-size: 16px;
+  color: #CA3482;}
+  .atdeliverydetailsCls input[type=text],.placecodCls input[type=text],.bookappointCls input[type=text]{color: #CA3482;text-align: center;font-size: 16px;border-radius:0;}
+button.appointmentSubmitBtn,button.appointmentSubmitBtn:hover{  color: white;
+  font-size: 20px;
+  border: none;background: linear-gradient(to bottom, rgb(65, 170, 224), rgb(66, 116, 185));}
+  div.item-divider{text-align: center;color: #CA3482}
+label.availabilityClsLabel,.at-color-light,div a.at-color-light{color:#CA3482; }
+.placecodCls select{-webkit-appearance: none;padding: 7px 15px;border-radius: 0;width: 64%;margin-top: 5px;border: none;}

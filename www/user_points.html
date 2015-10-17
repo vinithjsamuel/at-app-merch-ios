@@ -1,0 +1,92 @@
+<div class="scrollable">
+  <div class="scrollable-content container-fluid section" id="user_points">
+    <div class="clsUserRowWrapper">
+      <div class="clsUserRow clearfix">
+        <div class="clsValue"> Hi <span class="userAdmin"  ng-show="userid==1"> Admin </span> <span ng-if="userdata.display_name && userdata.display_name!=''"> {{ userdata.display_name }} </span> <span ng-if="userdata.user_login && userdata.user_login==''"> {{ userdata.user_login }} </span> </div></div>
+      </div>
+    <div class="myaccount page_content">
+      <div class="clsUserRowWrapper clsUserMypoints">
+        <div class="subHeads">MY POINTS</div>
+        <div class="clsUserRow clearfix">
+          <div class="clsFloatLeft clsLabel col-lg-8 col-md-8 col-sm-8">  
+          	SIGNUP POINTS:
+            <div class="clear"></div> 
+            <div class="clsSignDesc col-lg-6 col-md-6 col-sm-6">Avail these sign up bonus points once you have purchased deals worth more than AED 900 in total</div> 
+            <div class="clear"></div> 
+          </div>
+          <div class="clsFloatRight clsValue col-lg-4 col-md-4 col-sm-4">
+             	<span ng-if="userdata.at_user_sign_up_points && userdata.at_user_sign_up_points==0">100</span>
+                <span style="color:red" ng-if="userdata.at_user_sign_up_points && userdata.at_user_sign_up_points==1">100</span>
+		  </div>
+        </div>
+        <div class="clsUserRow clearfix">
+          <div class="clsFloatLeft clsLabel col-lg-8 col-md-8 col-sm-8"> Purchased Deals Points: </div>
+          <div ng-if="userdata.at_user_purchasing_points" class="clsFloatRight clsValue col-lg-4 col-md-4 col-sm-4">
+           {{ userdata.at_user_purchasing_points | floor}}
+          </div>
+        </div>
+        <div class="clsUserRow clearfix">
+          <div class="clsFloatLeft clsLabel col-lg-8 col-md-8 col-sm-8"> Referring friends Points: </div>
+          <div ng-if="userdata.at_user_refferel_points" class="clsFloatRight clsValue col-lg-4 col-md-4 col-sm-4">
+             	{{ (userdata.at_user_refferel_points) }}
+		  </div>
+        </div>
+      </div>
+      <div class="clsUserRowWrapper clsMyTotalPoints">
+        <div class="clsUserRow clearfix">
+          <div class="clsFloatLeft clsLabel col-lg-8 col-md-8 col-sm-8"> Exchanged Wallet Points: </div>
+          <div ng-if="userdata.user_wallet_points" class="clsFloatRight clsValue col-lg-4 col-md-4 col-sm-4"> {{ userdata.user_wallet_points | floor}} </div>
+        </div>
+        <div class="clsUserRow clearfix">
+          <div class="clsFloatLeft clsLabel col-lg-8 col-md-8 col-sm-8">Used points: </div>
+          <div ng-if="userdata.used_points" class="clsFloatRight clsValue col-lg-4 col-md-4 col-sm-4">
+          	{{ userdata.used_points | floor}} 
+		  </div>
+        </div>
+        <div class="clsUserRow clearfix">
+          <div class="clsFloatLeft clsLabel col-lg-8 col-md-8 col-sm-8">CURRENT POINTS BALANCE: </div>
+          <div ng-if="userdata.user_wallet_points && userdata.at_user_balance" class="clsFloatRight clsValue col-lg-4 col-md-4 col-sm-4">
+          	{{ (userdata.user_wallet_points * 1) + (userdata.at_user_balance * 1) | floor }} 
+		  </div>
+        </div>
+        
+      </div>
+      <div class="clsUserRowWrapper clsMylevel">
+        <div class="subHeads">MY LEVEL</div>
+      <!--  <div class="clsUserRow clearfix clsLevelHeader">
+          <div class="clsFloatLeft clsLavelImage col-lg-3 col-md-3 col-sm-3"> Levels </div>
+          <div class="clsFloatLeft clsPointsUnlocked col-lg-5 col-md-5 col-sm-5"> Points to Unlock </div>
+          <div class="clsFloatLeft clsLevelSpend col-lg-3 col-md-3 col-sm-3"> Level of Spend </div>
+        </div>-->
+        <div class="clsUserRow clearfix clslevelPoints">
+          <div class="clsLavelImage col-lg-3 col-md-3 col-sm-3"> <img src="assets/images/AT_Points_Platinum.jpg"> </div>
+          <div class="clsPointsUnlocked col-lg-8 col-md-8 col-sm-8"> 
+          	<p>You need 500 Points to unlock this level</p>
+            <p>You will enjoy more points with every purchase by accumulating points equivalent to 3% of the total deal's worth</p>
+          </div>
+          <div class="clear"></div>
+          <p class="currentLevel" ng-if="userdata.at_user_level_id && userdata.at_user_level_id==3"><strong>Your current level</strong></p>
+        </div>
+        <div class="clsUserRow clearfix clslevelPoints">
+          <div class="clsLavelImage col-lg-3 col-md-3 col-sm-3"> <img src="assets/images/AT_Points_Gold.jpg"> </div>
+          <div class="clsPointsUnlocked col-lg-8 col-md-8 col-sm-8"> 
+          	<p>You need 300 Points to unlock this level</p>
+            <p>You will enjoy more points with every purchase by accumulating points equivalent to 2.5% of the total deal's worth</p>
+            </div>
+          <!--<div class="clsLevelSpend col-lg-3 col-md-3 col-sm-3"> <p><strong>Level of Spend</strong></p><span>10,000 - 24,000 AED</span> </div>-->
+          <div class="clear"></div>
+          <p class="currentLevel" ng-if="userdata.at_user_level_id && userdata.at_user_level_id==2"><strong>Your current level</strong></p>
+        </div>
+        <div class="clsUserRow clearfix clslevelPoints">
+          <div class="clsLavelImage col-lg-3 col-md-3 col-sm-3"> <img src="assets/images/AT_Points_Silver.jpg"> </div>
+          <div class="clsPointsUnlocked col-lg-8 col-md-8 col-sm-8"> 
+          	<span>You need 100 Points to unlock this level.</span>
+            <p>You will enjoy more points with every purchase by accumulating points equivalent to 2% of the total deal's worth</p>
+          </div>
+          <div class="clear"></div>
+          <p class="currentLevel" ng-if="userdata.at_user_level_id && userdata.at_user_level_id==1"><strong>Your current level</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

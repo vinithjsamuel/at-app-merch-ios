@@ -1,0 +1,234 @@
+<div class="scrollable">
+  <div class="scrollable-content container-fluid section myAccountPage" ng-controller="myAccountController as myAccountctrl">
+    <div class="clsUserRowWrapperUsername">
+      <div class="clsUserRow clearfix">
+        <div class="clsValue"> Hi <span class="userAdmin"  ng-show="userid==1"> Admin </span> <span ng-show="userdata.display_name!=''"> {{ userdata.display_name }} </span> <span ng-show="userdata.display_name==''"> {{ userdata.user_login }} </span> </div>
+      </div>
+      <div class="clsUserRow clearfix">
+        <div class="clearfix">
+          <div class="clsValue" ng-if="userdata.at_user_points && userdata.at_user_points != 0">Points : {{ userdata.at_user_points | floor}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="panel-group" id="myAccount">
+      <div class="panel panel-default">
+        <div class="panel-heading" toggle target="userPersonalInfo">
+          <h4 class="panel-title"> User Info </h4>
+        </div>
+        <div id="userPersonalInfo" toggleable active-class="in" exclusion-group="accordion1" default="active" class="panel-collapse collapse clsPersonalInfoField">
+          <div class="clsPersonalInfoFrm">
+          	<div class="messageContainer" ng-show="myAccountctrl.UpdateUsr.resMessage.length">
+      			<div ng-repeat="resMessage in myAccountctrl.UpdateUsr.resMessage" ng-class="resMessage.msgType" type="{{ resMessage.msgType }}" ng-bind-html="resMessage.msg" ></div>
+      		</div>
+            <form id="UpdateUsr" name="UpdateUsr" method="post" novalidate ng-submit="myAccountctrl.updateUserForm(UpdateUsr)">
+              <div class="subHeads"> PERSONAL INFO: </div>
+              <div class="res_message"> </div>
+              <div class="clsFrmField clearfix">
+                <div class="clsLabel clsFloatLeft col-lg-4 col-md-4 col-sm-4"> First Name: </div>
+                <div class="clsFloatLeft clsInput col-lg-8 col-md-8 col-sm-8">
+                  <input type="text" name="first_name" id="first_name" required ng-model="myAccountctrl.UpdateUsr.first_name" class="clsTxt"/>
+                </div>
+              </div>
+              <div class="clsFrmField clearfix">
+                <div class="clsLabel clsFloatLeft col-lg-4 col-md-4 col-sm-4"> Last name: </div>
+                <div class="clsFloatLeft clsInput col-lg-8 col-md-8 col-sm-8">
+                  <input type="text" name="last_name" id="last_name" required ng-model="myAccountctrl.UpdateUsr.last_name" class="clsTxt"/>
+                </div>
+              </div>
+              <div class="clsFrmField clearfix">
+                <div class="clsLabel clsFloatLeft col-lg-4 col-md-4 col-sm-4"> Email: </div>
+                <div class="clsFloatLeft clsInput col-lg-8 col-md-8 col-sm-8">
+                  <input type="email" name="email" id="email" required ng-model="myAccountctrl.UpdateUsr.user_email" value="{{userdata.user_email}}" class="clsTxt" readonly/>
+                </div>
+              </div>
+              <div class="clsFrmField clearfix">
+                <div class="clsLabel clsFloatLeft col-lg-4 col-md-4 col-sm-4"> Mobile: </div>
+                <div class="clsFloatLeft clsInput col-lg-8 col-md-8 col-sm-8">
+                  <input type="text" name="contact_mobile" id="contact_mobile" value="{{ userdata._aes_contact }}" required ng-model="myAccountctrl.UpdateUsr._aes_contact" class="clsTxt"/>
+                </div>
+              </div>
+              <div class="clsFrmField clearfix">
+                <div class="clsLabel clsFloatLeft col-lg-4 col-md-4 col-sm-4"> Nationality: </div>
+                <div class="clsFloatLeft clsInput col-lg-8 col-md-8 col-sm-8">
+                  <input type="text" name="nationality" id="nationality" value="{{userdata.nationality}}" required ng-model="myAccountctrl.UpdateUsr.nationality" class="clsTxt"/>
+                </div>
+              </div>
+              <div class="clsFrmField clearfix">
+                <div class="clsLabel clsFloatLeft col-lg-4 col-md-4 col-sm-4"> Gender: </div>
+                <div class="clsFloatLeft clsInput col-lg-8 col-md-8 col-sm-8 clsGender">
+                  <input type="radio" name="gender" value="1" id="male_gender" ng-model="myAccountctrl.UpdateUsr.at_user_gender"/>
+                  <label for="male_gender">Male</label>
+                  <input type="radio" name="gender" value="2" id="female_gender" ng-model="myAccountctrl.UpdateUsr.at_user_gender"/>
+                  <label for="female_gender">Female</label>
+                </div>
+              </div>
+              <div class="clsSubmit clearfix">
+                <input type="submit" name="update_user_info" id="update_user_info" value="UPDATE" class="clsSubmitBtn clsFloatRight" ng-disabled="UpdateUsr.$invalid"  ng-hide="myAccountctrl.UpdateUsrFrm==1">
+                <img src="assets/images/frm_ajax_loader.gif" class="clsFloatRight" ng-show="myAccountctrl.UpdateUsrFrm" /> </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading" toggle target="userBillingAddress">
+          <h4 class="panel-title"> Billing Address </h4>
+        </div>
+        <div id="userBillingAddress" toggleable active-class="in" exclusion-group="accordion1" class="panel-collapse collapse clsPersonalInfoField">
+          <div class="clsBillingAddress">
+            <div class="messageContainer" ng-show="myAccountctrl.billingAdrUpdate.resMessage.length">
+      			<div ng-repeat="resMessage in myAccountctrl.billingAdrUpdate.resMessage" ng-class="resMessage.msgType" type="{{ resMessage.msgType }}" ng-bind-html="resMessage.msg" ></div>
+      		</div>
+            <form id="billingAdrUpdate" name="billingAdrUpdate" method="post" novalidate ng-submit="myAccountctrl.updateAddressForm(billingAdrUpdate)">
+              <div class="subHeads"> BILLING ADDRESS: </div>
+              <div class="res_message"> </div>
+              <div class="clsFrmField clearfix">
+                <div class="clsLabel clsFloatLeft col-lg-4 col-md-4 col-sm-4"> Address 1: </div>
+                <div class="clsFloatLeft clsInput col-lg-8 col-md-8 col-sm-8">
+                  <input type="text" name="aes_address_one" id="aes_address_one" required ng-model="myAccountctrl.billingAdrUpdate.aes_address_one" class="clsTxt"/>
+                </div>
+              </div>
+              <div class="clsFrmField clearfix">
+                <div class="clsLabel clsFloatLeft col-lg-4 col-md-4 col-sm-4"> Address 2: </div>
+                <div class="clsFloatLeft clsInput col-lg-8 col-md-8 col-sm-8">
+                  <input type="text" name="aes_address_two" id="aes_address_two" required class="clsTxt" ng-model="myAccountctrl.billingAdrUpdate.aes_address_two"/>
+                </div>
+              </div>
+              <div class="clsFrmField clearfix">
+                <div class="clsLabel clsFloatLeft col-lg-4 col-md-4 col-sm-4"> Emirate: </div>
+                <div class="clsFloatLeft clsInput col-lg-8 col-md-8 col-sm-8">
+                  <select name="aes_address_emirate" id="aes_address_emirate" class="clsTxt" ng-model="myAccountctrl.billingAdrUpdate.aes_address_emirate" ng-init="myAccountctrl.billingAdrUpdate.aes_address_emirate = myAccountctrl.billingAdrUpdate.aes_address_emirate" ng-options="emiratesOption.idVal as emiratesOption.value for emiratesOption in emirates">
+                  <option value="">Select Your Emirate</option>
+                  </select>
+                  <span style="display:none">{{ myAccountctrl.billingAdrUpdate.aes_address_emirate }}</span>
+                </div>
+              </div>
+              <div class="clsFrmField clearfix">
+                <div class="clsLabel clsFloatLeft col-lg-4 col-md-4 col-sm-4"> P.O Box: </div>
+                <div class="clsFloatLeft clsInput col-lg-8 col-md-8 col-sm-8">
+                  <input type="text" name="po_box" id="po_box" required ng-model="myAccountctrl.billingAdrUpdate.aes_address_pin" class="clsTxt"/>
+                </div>
+              </div>
+              <div class="clsSubmit clearfix">
+                <input type="submit" name="update_user_address" id="update_user_address" value="UPDATE" class="clsSubmitBtn clsFloatRight" ng-hide="myAccountctrl.UpdateAddFrm==1">
+                <img src="assets/images/frm_ajax_loader.gif" class="clsFloatRight" ng-show="myAccountctrl.UpdateAddFrm==1"/> </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading" toggle target="userChangePassword">
+          <h4 class="panel-title"> Change Password </h4>
+        </div>
+        <div id="userChangePassword" toggleable active-class="in" exclusion-group="accordion1" class="panel-collapse collapse clsPersonalInfoField">
+          <div class="clsChangePassword">
+            <div class="messageContainer" ng-show="myAccountctrl.changePwdResField.length">
+      			<div ng-repeat="resMessage in myAccountctrl.changePwdResField" ng-class="resMessage.msgType" type="{{ resMessage.msgType }}" ng-bind-html="resMessage.msg" ></div>
+      		</div>
+            <form id="ChangePassword" name="ChangePassword" method="post" novalidate ng-submit="!ChangePassword.$invalid && myAccountctrl.changePasswordForm(ChangePassword)">
+           
+              <div class="clsChangePassword">
+                <div class="subHeads"> PASSWORD: </div>
+                <div class="clsFrmField clearfix">
+                  <div class="clsLabel clsFloatLeft col-lg-4 col-md-4 col-sm-4"> Current Password: </div>
+                  <div class="clsFloatLeft clsInput col-lg-8 col-md-8 col-sm-8">
+                  
+                    <input type="password" name="passwordField" id="passwordField" value="" class="clsTxt" required ng-model="myAccountctrl.ChangePassword.passwordField"  ng-minlength="6" ng-maxlength="20" auto-fill-sync />
+                    
+                  </div>
+                </div>
+                <div class="res_message"> </div>
+                <div class="clsFrmField clearfix">
+                  <div class="clsLabel clsFloatLeft col-lg-4 col-md-4 col-sm-4"> New Password: </div>
+                  <div class="clsFloatLeft clsInput col-lg-8 col-md-8 col-sm-8">
+                    
+                    <input type="password" name="newPasswordField" id="newPasswordField" value="" class="clsTxt" required ng-model="myAccountctrl.ChangePassword.newPasswordField" ng-minlength="6" ng-maxlength="20" auto-fill-sync />
+                    
+                   <p ng-show="ChangePassword.newPasswordField.$invalid-minlength  && !ChangePassword.newPasswordField.$pristine" class="help-block">Should be 6 characters</p>
+                  </div>
+                </div>
+                <div class="clsFrmField clearfix">
+                  <div class="clsLabel clsFloatLeft col-lg-4 col-md-4 col-sm-4"> Confirm New Password: </div>
+                  <div class="clsFloatLeft clsInput col-lg-8 col-md-8 col-sm-8">
+                    
+                    <input type="password" name="confirmNewPasswordField" id="confirmNewPasswordField" value="" class="clsTxt" required ng-model="myAccountctrl.ChangePassword.confirmNewPasswordField" ng-minlength="6" ng-maxlength="20" auto-fill-sync />
+                    
+                    <p ng-show="ChangePassword.confirmNewPasswordField.$invalid-minlength  && !ChangePassword.confirmNewPasswordField.$pristine" class="help-block">Should be 6 characters</p>
+                  </div>
+                </div>
+                <div class="clsSubmit clearfix">
+                  <input type="submit" name="update_user_pwd" id="update_user_pwd" value="UPDATE" class="clsSubmitBtn clsFloatRight" ng-hide="myAccountctrl.UpdatePwdFrm==1">
+                  <img src="assets/images/frm_ajax_loader.gif" class="clsFloatRight" ng-show="myAccountctrl.UpdatePwdFrm==1"/> </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading" toggle target="userEmailPreferences">
+          <h4 class="panel-title"> Email Preferences </h4>
+        </div>
+        <div id="userEmailPreferences" toggleable active-class="in" exclusion-group="accordion1" class="panel-collapse collapse clsPersonalInfoField">
+          <div class="clsEmailPreferences">
+            <form method="post" name="email_preferences" id="email_preferences" novalidate ng-submit="!email_preferences.$invalid && myAccountctrl.updateEmailPreferences(email_preferences)">
+              <div class="clsEmailFrequency">
+                <div class="subHeads"> EMAIL PREFERENCES: </div>
+                <div class="messageContainer" ng-show="myAccountctrl.EmailPreUpdate.resMessage.length">
+      				<div ng-repeat="resMessage in myAccountctrl.EmailPreUpdate.resMessage" ng-class="resMessage.msgType" type="{{ resMessage.msgType }}" ng-bind-html="resMessage.msg" ></div>
+      			</div>
+                <div class="clsFrmField clearfix">
+                    <div class="clsLabel col-lg-12 col-lg-12 col-lg-12"> Location Subscriptions: </div>
+                    <div class=" col-lg-12 col-lg-12 col-lg-12">
+                        <select name="at_user_subscribed_city" 
+                                id="at_user_subscribed_city" 
+                                class="clsTxt" 
+                                ng-model="myAccountctrl.EmailPreUpdate.at_user_subscribed_city" 
+                                ng-init="myAccountctrl.EmailPreUpdate.at_user_subscribed_city = myAccountctrl.EmailPreUpdate.at_user_subscribed_city"
+                                ng-options="emiratesOption.idVal as emiratesOption.value for emiratesOption in emirates | filter:{ deal_city_status:1 }">
+                                <option value="">Select Location</option>	
+                      </select>
+                      </div>
+                </div>
+                <div class="clsFrmField clearfix">
+                  <div class="clsInput clsFloatLeft col-lg-1 col-md-1 col-sm-1">
+                    <input type="radio" name="emailpreferences" id="emailpreferences_weekly_offer" value="1" ng-model="myAccountctrl.EmailPreUpdate.at_subscribe_news_letter" />
+                  </div>
+                  <div class="clsLabel clsFloatLeft col-lg-10 col-md-10 col-sm-10">
+                    <label for="emailpreferences_weekly_offer">Receive Weekly Newsletter + Offer Alert notifications</label>
+                  </div>
+                </div>
+                <div class="clsFrmField clearfix">
+                  <div class="clsInput clsFloatLeft col-lg-1 col-md-1 col-sm-1">
+                    <input type="radio" name="emailpreferences" id="emailpreferences_weekly" value="2" ng-model="myAccountctrl.EmailPreUpdate.at_subscribe_news_letter"/>
+                  </div>
+                  <div class="clsLabel clsFloatLeft col-lg-10 col-md-10 col-sm-10">
+                    <label for="emailpreferences_weekly">Receive only the Weekly Newsletter.</label>
+                  </div>
+                </div>
+                <div class="clsFrmField clearfix">
+                  <div class="clsInput clsFloatLeft col-lg-1 col-md-1 col-sm-1">
+                    <input type="radio" name="emailpreferences" id="emailpreferences_offer" value="3" ng-model="myAccountctrl.EmailPreUpdate.at_subscribe_news_letter"/>
+                  </div>
+                  <div class="clsLabel clsFloatLeft col-lg-10 col-md-10 col-sm-10">
+                    <label for="emailpreferences_offer">Receive only the Offer Alert notifications.</label>
+                  </div>
+                </div>
+                <div class="clsFrmField clearfix">
+                  <div class="clsInput clsFloatLeft col-lg-1 col-md-1 col-sm-1">
+                    <input type="radio" name="emailpreferences" id="emailpreferences_no_notify" value="4" ng-model="myAccountctrl.EmailPreUpdate.at_subscribe_news_letter"/>
+                  </div>
+                  <div class="clsLabel clsFloatLeft col-lg-10 col-md-10 col-sm-10">
+                    <label for="emailpreferences_no_notify">No offer alerts or newsletters</label>
+                  </div>
+                </div>
+                <div class="clsSubmit clearfix">
+                  <input type="submit" name="update_email_preferences" id="update_email_preferences" value="UPDATE" class="clsSubmitBtn clsFloatRight" ng-hide="myAccountctrl.UpdateEmailPreFrm==1" />
+                  <img src="assets/images/frm_ajax_loader.gif" class="clsFloatRight" ng-show="myAccountctrl.UpdateEmailPreFrm==1"/> </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

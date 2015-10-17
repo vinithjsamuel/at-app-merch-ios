@@ -1,0 +1,24 @@
+<div class="scrollable clsAfterPay">
+  <div class="scrollable-content">
+    <div class="payWrapper">
+      <div class="whiteBg">
+        <div class="site_logo"> <img src="assets/images/at-logo.png" /> </div>
+        <div class="clsMessage">
+          <div class="clsmsgDesc">
+            <h2>We're very happy that you've participated on this deal offer.</h2>
+            <p>Please wait for our email with details regarding your purchased deal (check your spam folder if you do not receive this) 
+            	<span ng-show="earned_points!=0">And as a way of showing our immense thanks, you've have been loaded:</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="userPoints" ng-show="earned_points!=0"> {{ earned_points }} Aesthetic Today Points in your wallet! </div>
+      <div class="clsYellowBg">
+        <div class="footerMsg">
+          <p ng-show="earned_points!=0">The more points you collect the more benefits you get from Aesthetic Today!</p>
+        </div>
+      </div>
+      <div class="buyMore"> <a href="#"></a> </div>
+    </div>
+  </div>
+</div>

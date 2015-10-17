@@ -1,0 +1,178 @@
+.navbar-app
+{
+	background:none repeat scroll 0 0 #766426;
+}
+/**, *:after, *:before {
+    box-sizing: content-box !important;
+}*/
+.clsDescImg
+{
+	width:100%;
+}
+.app-content-loading
+{
+	background:#000;
+}
+.app-content-loading .loading-spinner
+{
+	color:#fff !important;
+}
+.sidebar-toggle i.fa-bars
+{
+	display: inline-block;
+    font-size: 25px;
+    position: absolute;
+    top: 12px;
+}
+#mainSidebar .list-group
+{
+	margin:30px 0 0 0;
+}
+#mainSidebar .list-group-item
+{
+	background-color: rgba(0, 0, 0, 0.5);
+    border-color: rgba(0, 0, 0, 0);
+	position:relative;
+}
+#mainSidebar .list-group-item i
+{
+	display:inline-block;
+}
+#mainSidebar .list-group-item span
+{
+	display: inline-block;
+    left: 55px;
+    position: absolute;
+    top: 15px;
+}
+#mainSidebar  a.list-group-item
+{
+	color:#fff;
+	font-size:14px;
+	font-weight:bold;
+	cursor:pointer;
+}
+#mainSidebar.sidebar-left	
+{
+	background:none repeat scroll 0 0 rgb(188, 162, 80);
+}
+#mainSidebar .app-name
+{
+	margin: 50px 0 0;
+	text-align: left;
+}
+#mainSidebar .app-name img
+{
+	margin: 100px 0 0 20px;
+	width:45%;
+}
+.app-name + .scrollable, .sidebar-header + .scrollable
+{
+	padding-top:300px;
+}
+.nav .open .dropdown-menu
+{
+	
+}
+#mainSidebar .toggleable-dropdown
+{
+	width:100%;
+}
+#mainSidebar .dropdown-menu
+{
+	width:100%;
+	border-radius:0px;
+	box-shadow:none;
+	background:#000;
+	margin:0;
+	position:relative;
+}
+#mainSidebar .dropdown-menu a
+{
+	color:#fff;
+	padding:10px 20px;
+}
+#mainSidebar .dropdown-menu a:hover
+{
+	background:#000;
+}
+.app-body .scrollable
+{
+	background-color:#000;
+	/*background:url(../images/deals_page_bg.png) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;*/
+}
+/*.app-body .dealsPage
+{
+	background-image:url(../images/deals_page_bg.png) !important ;
+}*/
+.section{ background:none repeat scroll 0 0 rgba(255, 255, 255, 0); }
+.scrollable-content.section
+{
+	padding:10px 0;
+}
+.clsPageDesc
+{
+	background: none repeat scroll 0 0 rgb(0, 0, 0);
+   /* border: 7px solid rgb(255, 255, 255);*/
+    color: rgb(128, 115, 63);
+    padding: 10px;
+	/* opacity: 0.8;*/
+}
+.clsContactDetails
+{
+	margin:0 0 10px;
+}
+.clsContactDetails ul
+{
+	margin:0;
+	padding:0;
+}
+.clsContactDetails ul li
+{
+	font-size: 16px;
+    list-style: none outside none;
+    padding: 5px 0;
+}
+.clsContactDetails ul li a
+{
+	color:rgb(128, 115, 63);
+}
+.clsContactDetails i
+{
+	color:#fff;
+	padding-right:10px;
+	font-size:20px;
+}
+.clsPageDesc .clsQuestions
+{
+	
+}
+.clsPageDesc .clsQuestions .subHeads
+{
+	font-weight:bold;
+	margin:5px 0;
+	font-size:20px;
+}
+.clsPageDesc .clsQuestions .clsQuestion
+{
+	font-weight:bold;
+}
+.clsPageDesc .clsQuestions  .clsAnswer
+{
+	font-style:italic;
+}
+.clsBack
+{
+	position: absolute;
+    right: 17px;
+    top: 7px;
+	cursor:pointer;
+}
+.navbar-app .btn-navbar:hover, .navbar-app .btn:hover
+{
+	color:rgb(211, 187, 112);
+}

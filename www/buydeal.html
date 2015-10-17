@@ -1,0 +1,197 @@
+<div class="scrollable buyDetails">
+  <div class="scrollable-content container-fluid section">
+    <div class="dealBuyDetail clearfix">
+      <div class="clsDealTle clsDealDesc col-lg-8 col-md-8 col-sm-8">
+        <div class="clsDealTle col-lg-12 col-md-12 col-sm-12" ng-bind-html="deal_detail.post_title"></div>
+        <div class="clsSmallDesc col-lg-12 col-md-12 col-sm-12" ng-show="optionVal!=0">{{ deal_detail.deals_options[optionVal-1].aes_product_opt_tle+" - "+ deal_detail.aes_deal_curreny_code+" "+ deal_detail.deals_options[optionVal-1].aes_product_opt_discounted_price }} <span ng-show="deal_detail.20off==1">NOW 20% OFF {{ deal_detail.aes_deal_curreny_code+" "+ off20( deal_detail.deals_options[optionVal-1].aes_product_opt_discounted_price_int ) }}</span> </div>
+        <div class="clsSmallDesc col-lg-12 col-md-12 col-sm-12" ng-show="optionVal==0"><span ng-show="deal_detail.20off==1">NOW 20% OFF {{ deal_detail.aes_deal_curreny_code+" "+off20(deal_detail.deal_discount_price) }}</span></div>
+        <div class="clsDealQty">
+          <input type="hidden" name="deal_detail_id" id="deal_detail_id" value="{{ deal_detail.ID }}" />
+          <div class="col-lg-12 col-md-12 col-sm-12 item_qtyLbl"> Quantity </div>
+          <div class="clear"></div>
+          <select name="item_qty" id="item_qty" ng-model="dealQty.item_qty" ng-init="dealQty.item_qty=1" ng-change="updateCouponDiscount()">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+          <input type="hidden" name="deal_price" id="deal_price" value="{{ deal_detail.deal_discount_price }}" />
+          <input type="hidden" name="deal_offer_price" id="deal_offer_price" value="{{ deal_detail.20off }}" />
+        </div>
+        <div class="clsDealPriceDisplay" ng-show="optionVal==0 && deal_detail.20off==0"> <span class="clsPriceValue">{{ deal_detail.deal_discount_price * dealQty.item_qty }}</span>&nbsp;<span class="clsCurrencyValue">{{ deal_detail.aes_deal_curreny_code }}</span> </div>
+        <div class="clsDealPriceDisplay" ng-show="optionVal==0 && deal_detail.20off==1"> <span class="clsPriceValue">{{ off20(deal_detail.deal_discount_price * dealQty.item_qty) }}</span>&nbsp;<span class="clsCurrencyValue">{{ deal_detail.aes_deal_curreny_code }}</span> </div>
+        <div class="clsDealPriceDisplay" ng-show="optionVal!=0 && deal_detail.20off==0"> <span class="clsCurrencyValue">{{ deal_detail.aes_deal_curreny_code }}</span>&nbsp;<span class="clsPriceValue">{{ deal_detail.deals_options[optionVal-1].aes_product_opt_discounted_price_int * dealQty.item_qty }}</span> </div>
+        <div class="clsDealPriceDisplay" ng-show="optionVal!=0 && deal_detail.20off==1"> <span class="clsCurrencyValue">{{ deal_detail.aes_deal_curreny_code }}</span>&nbsp;<span class="clsPriceValue">{{ off20(deal_detail.deals_options[optionVal-1].aes_product_opt_discounted_price_int * dealQty.item_qty) }}</span> </div>
+      </div>
+      <div class="clsDealThmbImg col-lg-4 col-md-4 col-sm-4"> <img ng-src="{{ deal_detail.deal_thumb_img }}" /> </div>
+    </div>
+    <div class="clearfix clsBuyOpt">
+      <div class="clsfinalAmt">
+        <div class="clsSignUpPointOption clearfix" ng-show="(userid!=0 && userdata.at_user_points!=0)">
+          <div class="clsFloatLeft col-lg-1 col-md-1 col-sm-1 clsOpt">
+            <input type="checkBox" name="walletPointsUsed" id="walletPointsUsed" ng-model="dealQty.walletPointsUsed" ng-init="dealQty.walletPointsUsed=false" ng-modal="walletPointsUsed" value="1"/>
+          </div>
+          <div class="clsFloatLeft col-lg-10 col-md-10 col-sm-10 clsOptVal">
+            <label for="signUpPointsUsed"> &nbsp;Redeem( {{ userdata.at_user_points }}  Points )</label>
+          </div>
+        </div>
+        
+        <div class="atclsZeroRedeem clsSignUpPointOption clearfix" ng-show="(userid==0 || userdata.at_user_points==0)">
+          <div class="clsFloatLeft col-lg-1 col-md-1 col-sm-1 clsOpt">
+            <input type="checkBox" name="walletPointsUsed" id="walletPointsUsed" ng-model="dealQty.walletPointsUsed" ng-init="dealQty.walletPointsUsed=false" ng-modal="walletPointsUsed" value="1" disabled="disabled" ng-change="redeemPointChange()" />
+          </div>
+          <div class="clsFloatLeft col-lg-10 col-md-10 col-sm-10 clsOptVal">
+            <label for="signUpPointsUsed"> &nbsp;Redeem( 0 Points )</label>
+            <p id="atRedeemAlert">&nbsp;You don't have points to Redeem</p>
+          </div>
+        </div>
+        
+        <div class="full_amt_terms clearfix">
+          <div class="clsFloatLeft col-lg-1 col-md-1 col-sm-1 clsOpt">
+            <input type="radio" name="makefullpayment" id="makefullpayment" value="1" class="clspayOpt" checked="checked"/>
+          </div>
+          <div class="clsFloatLeft col-lg-10 col-md-10 col-sm-10 clsOptVal">
+            <span></span>
+            <label for="makefullpayment">&nbsp;Full payment ( <span class="fullpaymetopt" ng-show="optionVal==0 && deal_detail.20off==0">{{ (deal_detail.deal_discount_price * dealQty.item_qty)+" "+deal_detail.aes_deal_curreny_code }} <span ng-show="dealQty.walletPointsUsed==true"> {{ (deal_detail.deal_discount_price * dealQty.item_qty) }} - {{ userdata.at_user_points }}<span> Points redeemed </span> = {{ (deal_detail.deal_discount_price * dealQty.item_qty)-userdata.at_user_points }} {{ deal_detail.aes_deal_curreny_code }}</span></span> <span class="fullpaymetopt" ng-show="optionVal==0 && deal_detail.20off==1"> {{ (deal_detail.deal_discount_price * dealQty.item_qty)+" "+deal_detail.aes_deal_curreny_code+" - 20% = " +off20(deal_detail.deal_discount_price)*dealQty.item_qty+" "+deal_detail.aes_deal_curreny_code }} <span ng-show="dealQty.walletPointsUsed==true"> - {{ userdata.at_user_points }}<span> Points redeemed </span> = {{ off20((deal_detail.deal_discount_price) * dealQty.item_qty)-userdata.at_user_points }} {{ deal_detail.aes_deal_curreny_code }}</span></span> <span class="fullpaymetopt" ng-show="optionVal!=0 && deal_detail.20off==1"> {{ (deal_detail.deals_options[optionVal-1].aes_product_opt_discounted_price_int  * dealQty.item_qty)+" "+deal_detail.aes_deal_curreny_code + " - 20% = "+off20(deal_detail.deals_options[optionVal-1].aes_product_opt_discounted_price_int) * dealQty.item_qty+" "+deal_detail.aes_deal_curreny_code }} <span ng-show="dealQty.walletPointsUsed==true"> - {{ userdata.at_user_points }}<span> Points redeemed </span> = {{ off20((deal_detail.deal_discount_price) * dealQty.item_qty)-userdata.at_user_points }} {{ deal_detail.aes_deal_curreny_code }}</span></span><span class="fullpaymetopt" ng-show="optionVal!=0 && deal_detail.20off==0"> {{ (deal_detail.deals_options[optionVal-1].aes_product_opt_discounted_price_int  * dealQty.item_qty)+" "+deal_detail.aes_deal_curreny_code }} <span ng-show="dealQty.walletPointsUsed==true"> - {{ userdata.at_user_points }}<span> Points redeemed </span> = {{ ((deal_detail.deals_options[optionVal-1].aes_product_opt_discounted_price_int) * dealQty.item_qty)-userdata.at_user_points }} {{ deal_detail.aes_deal_curreny_code }}</span></span>)</label>
+          </div>
+          <input type="hidden" name="deal_option_val" id="deal_option_val" value="{{ optionVal }}" />
+          <input type="hidden" name="deal_permalink_url" id="deal_permalink_url" value="{{ deal_detail.post_name }}" />
+          <input type="hidden" name="deal_item_qty" id="deal_item_qty" ng-model="dealcheck_out.deal_item_qty" value="{{ dealQty.item_qty }}" />
+        </div>
+        <div class="half-payment-main-Cls clsgrand_total clearfix" ng-show="buyAsGift==0">
+          <div class="clsFloatLeft col-lg-1 col-md-1 col-sm-1 clsOpt">
+            <input type="radio" name="makefullpayment" id="make50payment" value="0"  class="clspayOpt" disabled="disabled" />
+          </div>
+          <div class="clsFloatLeft col-lg-10 col-md-10 col-sm-10 clsOptVal">
+            <label for="make50payment" id="makeHalfpaymentLabel">&nbsp;Half payment ( 
+            <span class="grand_total" ng-show="optionVal==0 && deal_detail.20off==0">{{ deal_detail.deal_discount_price*dealQty.item_qty/2+" "+deal_detail.aes_deal_curreny_code }}<span ng-show="dealQty.walletPointsUsed==true"> - {{ userdata.at_user_points }}<span> Points redeemed </span> = {{ deal_detail.deal_discount_price*dealQty.item_qty/2-userdata.at_user_points }} {{ deal_detail.aes_deal_curreny_code }}</span></span> 
+            <span class="grand_total" ng-show="optionVal==0 && deal_detail.20off==1"> {{ (deal_detail.deal_discount_price * dealQty.item_qty/2)+" "+deal_detail.aes_deal_curreny_code+" - 20% = " +off20(deal_detail.deal_discount_price)*dealQty.item_qty/2+" "+deal_detail.aes_deal_curreny_code }} <span ng-show="dealQty.walletPointsUsed==true"> - {{ userdata.at_user_points }}<span> Points redeemed </span> = {{ off20((deal_detail.deal_discount_price) * dealQty.item_qty/2)-userdata.at_user_points }} {{ deal_detail.aes_deal_curreny_code }}</span></span> 
+            <span class="grand_total" ng-show="optionVal!=0 &&  deal_detail.20off==1"> {{ (deal_detail.deals_options[optionVal-1].aes_product_opt_discounted_price_int  * dealQty.item_qty/2)+" "+deal_detail.aes_deal_curreny_code + " - 20% = "+off20(deal_detail.deals_options[optionVal-1].aes_product_opt_discounted_price_int) * dealQty.item_qty/2+" "+deal_detail.aes_deal_curreny_code }} <span ng-show="dealQty.walletPointsUsed==true"> - {{ userdata.at_user_points }}<span> Points redeemed </span> = {{ off20((deal_detail.deal_discount_price) * dealQty.item_qty/2)-userdata.at_user_points }} {{ deal_detail.aes_deal_curreny_code }}</span></span> 
+            <span class="grand_total" ng-show="optionVal!=0 &&  deal_detail.20off==0">{{ (deal_detail.deals_options[optionVal-1].aes_product_opt_discounted_price_int  * dealQty.item_qty)/2+" "+deal_detail.aes_deal_curreny_code }} <span ng-show="dealQty.walletPointsUsed==true"> - {{ userdata.at_user_points }}<span> Points redeemed </span> = {{ ((deal_detail.deals_options[optionVal-1].aes_product_opt_discounted_price_int) * dealQty.item_qty)/2-userdata.at_user_points }} {{ deal_detail.aes_deal_curreny_code }}</span> </span>) 
+            <span class="full_amt_terms">Pay 50% now and 50% upon each visit to the merchant.</span> </label>
+            <p id="make50paymentAlert">&nbsp;Unfortunately, you are not eligible for this method of payment. Total Amount must be greater than or equal to 500 AED (For more info. please check our terms and conditions or contact us directly)</p>
+          </div>
+        </div>
+        <div ng-show="buyAsGift!=1&&deal_detail.meta_datas._is_solid_product!='yes'" class="full_amt_terms clearfix">
+            <div class="clsFloatLeft col-lg-1 col-md-1 col-sm-1 clsOpt">
+                <input type="radio" ng-model="makecashOnDelivery" name="makefullpayment" id="makecashOnDelivery" ng-value="deal_detail.deal_discount_price * dealQty.item_qty" class="clspayOpt" />
+            </div>
+            <div class="clsFloatLeft col-lg-10 col-md-10 col-sm-10 clsOptVal">
+                <label ng-show="optionVal==0" for="makecashOnDelivery">&nbsp;Cash On Delivery({{ (deal_detail.deal_discount_price * dealQty.item_qty) }} AED)</label>
+                <label ng-show="optionVal!=0" for="makecashOnDelivery">&nbsp;Cash On Delivery({{ (deal_detail.deals_options[optionVal-1].aes_product_opt_discounted_price * dealQty.item_qty) }} AED)</label>
+            </div>
+        </div>
+      
+      </div>
+      
+      <div id="BuyAsGiftFrm" ng-show="buyAsGift==1">
+        <input type="hidden" name="buy_as_a_gift" id="buy_as_a_gift" value="{{buyAsGift}}" />
+        <form id="GiftForm" name="GiftForm" method="post">
+          <div class="clsBuyAsGift col-lg-12 col-sm-12 col-md-12 clearfix">
+            <div class="clsFrmField clearfix clsName" style="display:none">
+              <div class="clsLabel"> Delivery Method: </div>
+              <div class="clsInput ">
+                <input type="radio" name="gift_delivery_method" value="email_it" checked="checked" class="clsGiftDeliveryOpt" />
+                <label for="email_it">&nbsp;&nbsp;Email it</label>
+                <input type="radio" name="gift_delivery_method" value="sent_it" class="clsGiftDeliveryOpt"/>
+                <label for="sent_it">&nbsp;&nbsp;I'll print it myself</label>
+              </div>
+            </div>
+            <div class="clsFrmField clsName clearfix">
+              <div class="clsLabel"> Receiver Name: </div>
+              <div class="clsInput col-lg-12 col-sm-12 col-md-12">
+                <input type="text" class="clsTxt" id="receiver_name" name="receiver_name">
+              </div>
+            </div>
+            <div class="clsFrmField clsEmail clearfix">
+              <div class="clsLabel"> Receiver Email: </div>
+              <div class="clsInput col-lg-12 col-sm-12 col-md-12">
+                <input type="text" class="clsTxt" id="receiver_email" name="receiver_email">
+              </div>
+            </div>
+            <div class="clear"></div>
+            <div class="clsFrmField clearfix">
+              <div class="clsLabel"> Receiver Message: </div>
+              <div class="clsInput col-lg-12 col-sm-12 col-md-12">
+                <textarea class="clsTxt" id="receiver_message" name="receiver_message" ></textarea>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="clear"></div>
+      </div>
+
+      <div class="list atdeliverydetailsCls" ng-if="deal_detail.meta_datas._is_solid_product=='yes'">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Name:</span>
+          <input ng-model="atdeliverydetail.name" type="text">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Email:</span>
+          <input ng-model="atdeliverydetail.email" type="text">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Contact No:</span>
+          <input ng-model="atdeliverydetail.contact" type="text">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Delivery Address:</span>
+          <input ng-model="atdeliverydetail.address_1" type="text" placeholder="Address Line 1">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <input ng-model="atdeliverydetail.address_2" type="text" placeholder="Address Line 2">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <input ng-model="atdeliverydetail.city" type="text" placeholder="City">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <input ng-model="atdeliverydetail.pobox" type="text" placeholder="PO Box No">
+        </label>
+      </div>
+
+      <div ng-show="userid==0" ng-controller="loginController">
+        <div ng-include="'loginAndSignup.html'"></div>
+      </div>
+    </div>
+    <div ng-show="userid!=0">
+      <div class="clear"></div>
+      <form name="dealcheck_out" id="dealcheck_out" method="post" novalidate ng-submit="dealcheck_outcheckout(dealcheck_out)">
+        <div class="clearfix clsBuyOpt"> 
+          <!--<div class="clsCouponCon" style="display:none">
+            <div class="clsLabel">Enter coupon code</div>
+            <div class="clsCouponFrm">
+              <input type="text" name="coupon_num" id="coupon_num" value="AToday" />
+              <input type="button" value="Update" id="coupon_update" name="coupon_update" class="btn btn-primary" ng-click="updateCouponDiscount()"/>
+            </div>
+          </div>-->
+          <div class="clsTerms">
+            <div class="clsPaymentMethod">
+              <div class="clear"></div>
+            </div>
+            <div class="accept_terms_box clearfix">
+              <div class="clsFloatLeft col-lg-1 col-md-1 col-sm-1 clsOpt">
+                <input type="checkbox" name="accept_terms" id="Buyaccept_terms" value="1" ng-model="dealcheck_out.accept_terms" required />
+              </div>
+              <div class="clsFloatLeft col-lg-10 col-md-10 col-sm-10 clsOptVal">
+                <label for="Buyaccept_terms" style="font-size:10px !important; text-transform:none !important;">I accept Aesthetic Today's <a href="#/terms-and-conditions" target="_blank">Terms and Conditions</a></label>
+              </div>
+            </div>
+          </div>
+          <div class="messageContainer" ng-show="resMessages.length">
+            <div ng-repeat="resMessage in resMessages" ng-class="resMessage.msgType" type="{{ resMessage.msgType }}" ng-bind-html="resMessage.msg"></div>
+          </div>
+          <div class="clsBuyBtn">
+            <input type="hidden" name="deal_id" id="deal_id" value="{{ deal_detail.post_name }}" />
+            <input type="submit" name="buySubmit" value="buy" id="buySubmit" class="clsSubmitbtn btn btn-primary" ng-disabled="dealcheck_out.$invalid"/>
+            <img src="assets/images/frm_ajax_loader.gif" class="clsFrmLoading" /> </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="clsReferFriend" overlay="referFriend" default="active">
+  <div class="shareLinkwrapper scrollable-content container-fluid section">
+    <div class="clearfix scrollable-content">
+      <div class="referIcon"></div>
+      <h3>Thanks, <span class="userAdmin"  ng-show="userid==1"> Admin </span> <span ng-show="userdata.first_name!='' && userdata.last_name!=''"> {{ userdata.first_name+' '+ userdata.last_name }} </span> <span ng-show="userdata.first_name=='' && userdata.last_name==''"> {{ userdata.user_details.user_login }} </span> !</h3>
+      <div class="shareDesc">
+        <p>Share the unique reference link with friends to earn 25 points on their first purchase. Post the link below on Facebook, Twitter or email to earn more points in your account.</p>
+        <div class="referLink clearfix">
+          <div class="clsFormField clearfix">
+            <input type="text" readonly value="{{ shareUrl() }}" id="refLinkTxt"  />
+          </div>
+          <div class="shareIcons clearfix">
+          	<a href="mailto:?body={{ 'Welcome to Aesthetic Today %0D%0A %0D%0A You\'ve been selected by your friend to join us at Aesthetic Today and enjoy our Exclusive Beauty Deals...%0D%0A %0D%0A Please click here to signup '+shareUrl(0) +'&subject=Aesthetic Today Invitation'}}" target="_blank"><i class="fa fa-envelope-o  fa-3x"></i></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{ shareUrl(0) }}" class="facebook" target="_blank"><i class="fa fa-facebook fa-3x"></i></a>
+            
+            <a href="https://twitter.com/home?status={{ shareUrl(1) }}" class="twitter" target="_blank"><i class="fa fa-twitter fa-3x"></i></a>
+            <!--<ul>
+              <li class="facebook"><a href="#" class="FBShare"></a></li>
+              <li class="twitter"><a href="#" target="_blank"></a></li>
+              <li class="mail"></li>
+            </ul>-->
+          </div>
+        </div>
+        <div class="referTerms">
+          <p>Being the first to share this link in your circle will:</p>
+          <ol>
+            <li> Earn you more points which you can redeem for deals</li>
+            <li> Raise your membership level, allowing you to access exclusive offers and more opportunities</li>
+            <li> Gain points every time your inner circle makes a purchase and enjoy deals together</li>
+          </ol>
+          <p class="reffNote">Note: Accounts must be verified before credit is given. <a href="#/terms-and-conditions">Terms & conditions apply</a>.</p>
+        </div>
+        <div class="clsShareSkip"> <a href="#" class="btn btn-primary" ng-click="closeOvelay('referFriend')">Close</a> </div>
+      </div>
+    </div>
+  </div>
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&appId=726779907367999&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</div>

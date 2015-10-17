@@ -1,0 +1,107 @@
+<div class="clsForms" id="buyRegisterFrmCon" ng-if="isShowLoginSignupValue">
+  <form id="buyRegisterFrm" name="buyRegisterFrm" method="post" novalidate ng-submit="buyRegisterSubmitForm(userRegField)">
+  	<h1>Sign up</h1>
+    <div class="regFormCont">
+      <div class="frmCont">
+        <div class="messageContainer" ng-show="resMessages.length">
+          <div ng-repeat="resMessage in resMessages" ng-class="resMessage.msgType" type="{{ resMessage.msgType }}" ng-bind-html="resMessage.msg" ></div>
+        </div>
+        <div class="clsFrmField clearfix">
+          <!--<div class="col-lg-12 col-sm-12 col-md-12">
+            <label for="name" class="col-lg-12 col-sm-12 col-md-12">Name</label>
+          </div>-->
+          <div class="col-lg-12 col-sm-12 col-md-12">
+            <input type="text" name="name" id="name" ng-model="userRegField.name" required  class="col-lg-12 col-sm-12 col-md-12  form-control" placeholder="Name">
+          </div>
+        </div>
+        <div class="clsFrmField clearfix">
+          <!--<div class="col-lg-12 col-sm-12 col-md-12">
+            <label for="email" class="col-lg-12 col-sm-12 col-md-12">Email</label>
+          </div>-->
+          <div class="col-lg-12 col-sm-12 col-md-12">
+            <input type="text" name="email" id="email" ng-model="userRegField.email" required class="col-lg-12 col-sm-12 col-md-12  form-control" placeholder="Email">
+          </div>
+        </div>
+        <div class="clsFrmField clearfix">
+          <!--<div class="col-lg-12 col-sm-12 col-md-12">
+            <label for="password">Password</label>
+          </div>-->
+          <div class="col-lg-12 col-sm-12 col-md-12">
+            <input type="password" name="pwdField" id="pwdField" class="col-lg-12 col-sm-12 col-md-12 form-control" ng-model="userRegField.pwdField" required placeholder="Password"/>
+          </div>
+        </div>
+        <div class="clsFrmField clearfix">
+          <!--<div class="col-lg-12 col-sm-12 col-md-12">
+            <label for="password">Confirm Password</label>
+          </div>-->
+          <div class="col-lg-12 col-sm-12 col-md-12">
+            <input type="password" name="confirmPwdField" id="confirmPwdField" class="col-lg-12 col-sm-12 col-md-12 form-control" ng-model="userRegField.confirmPwdField" required placeholder="Confirm Password"/>
+          </div>
+        </div>
+        <div class="clsFrmField clearfix">
+          <div class="accept_terms_box clearfix">
+          	<div class="accept_terms_box clearfix">
+            <div class="clsFloatLeft col-lg-1 col-md-1 col-sm-1 clsOpt">
+              <input type="checkbox" name="accept_terms" id="regAcceptTerms" value="1" ng-model="userRegField.accept_terms" required />
+            </div>
+            <div class="clsFloatLeft col-lg-10 col-md-10 col-sm-10 clsOptVal">
+              <label for="regAcceptTerms">I accept Aesthetic Today's <a href="#/terms-and-conditions" target="_blank">Terms and Conditions</a></label>
+            </div>
+          </div>
+            
+          </div>
+        </div>
+        <div class="clsFrmField clearfix formDesc">
+          <button class="btn btn-primary" id="submitFrmReg" type="submit" ng-disabled="buyRegisterFrm.$invalid">Submit</button>
+           <div class="clsHaveAccount"><div class="clsFloatLeft clsText"> Already have an account?</div> <a ng-mobile-click="isShowLoginSignupForm()">Login</a><div class="clear"></div></div>
+           
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="clsForms" id="BuyLoginFormCon" ng-if="!isShowLoginSignupValue">
+  <form id="BuyLoginForm" name="BuyLoginForm" method="post" novalidate ng-submit="buyLoginSubmitForm(userField)">
+  	<h1> Login </h1>
+    <div class="regFormCont">
+      <div class="frmCont">
+        <div class="messageContainer" ng-show="resMessages.length">
+          <div ng-repeat="resMessage in resMessages" ng-class="resMessage.msgType" type="{{ resMessage.msgType }}" ng-bind-html="resMessage.msg" ></div>
+        </div>
+        <div class="clsFrmField clearfix">
+          <!--<div class="col-lg-12 col-sm-12 col-md-12">
+            <label for="email" class="col-lg-12 col-sm-12 col-md-12">Email</label>
+          </div>-->
+          <div class="col-lg-12 col-sm-12 col-md-12">
+            <input type="email" name="email" id="email" required ng-model="userField.email" class="col-lg-12 col-sm-12 col-md-12 form-control" placeholder="Email" />
+            <p ng-show="userField.email.$invalid && !userField.email.$pristine" class="help-block">Enter a valid email.</p>
+          </div>
+        </div>
+        <div class="clsFrmField clearfix">
+          <!--<div class="col-lg-12 col-sm-12 col-md-12">
+            <label for="password">Password</label>
+          </div>-->
+          <div class="col-lg-12 col-sm-12 col-md-12">
+            <input type="password" name="pwdField" id="pwdField" class="col-lg-12 col-sm-12 col-md-12 form-control" ng-model="userField.pwdField" required placeholder="Password"/>
+            <p ng-show="userField.pwdField.$invalid" class="help-block">Please enter your password</p>
+          </div>
+        </div>
+        <div class="clsFrmField clearfix">
+          <div class="accept_terms_box clearfix">
+            <div class="clsFloatLeft col-lg-1 col-md-1 col-sm-1 clsOpt">
+              <input type="checkbox" name="accept_terms" id="accept_terms" value="1" ng-model="userField.accept_terms" required />
+            </div>
+            <div class="clsFloatLeft col-lg-10 col-md-10 col-sm-10 clsOptVal">
+              <label for="accept_terms">I accept Aesthetic Today's <a href="#/terms-and-conditions" target="_blank">Terms and Conditions</a></label>
+            </div>
+          </div>
+        </div>
+        <div class="clsFrmField clearfix formDesc">
+          <button class="btn btn-primary" id="submitFrmLogin" type="submit" ng-disabled="BuyLoginForm.$invalid">Submit</button>
+          <div class="clsText"><a href="{{ site_url }}/wp-login.php?action=lostpassword">Forgot your password?</a></div>
+          <div class="clsHaveAccount"><div class="clsFloatLeft clsText">New user?</div> <a ng-mobile-click="isShowLoginSignupForm()">Sign Up</a><div class="clear"></div></div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

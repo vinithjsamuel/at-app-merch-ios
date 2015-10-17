@@ -1,0 +1,51 @@
+<div class="scrollable dealsPage">
+  <div class="scrollable-content container-fluid section">
+    <div>
+      <div id="no-results" class="feed-message" ng-show="deal_count==0">
+        <h3>Uh-oh. No matching deals.</h3>
+        <h5>Hurry back soon for deals that are just right for you.</h5>
+      </div>
+      <div ng-repeat="deals in deals" class="atDealsListMain">
+        <div class="clsDealsHeader clearfix atDealsListHeader">
+            <div class="clsDealTle col-lg-12 col-md-12 col-sm-12 text-center"> <a href="#deal/{{deals.cat_slug}}/{{deals.post_name}}" data-post-id="{{deals.post_name}}" class="clsDealDetailView" data-post-cat-name="{{deals.cat_name}}" ng-bind-html="deals.post_title"></a> </div>
+            <div class="clear"></div>
+            <div class="clsDealsDesc col-lg-12 col-md-12 col-sm-12 text-center" ng-bind-html="deals.merchent_details.title"></div>
+        </div>
+        <div class="dealImage">
+          <img ng-src="{{ deals.mobile_thumb }}" title="{{deals.post_small_description}}" alt="{{deals.post_small_description}}" ng-show="deals.mobile_thumb" src="images/default-item-pic.jpg" />
+        </div>
+
+        <div class="row atDealsListFooter">
+          <div class="col col-33 text-center">
+            <div>
+                  <span class="clsNow"><small ng-if="(1 * deals.sale_price) > deals.deal_discount_price && 1!=1">NOW</small></span><br>
+                  <span class="clsCurrencyVal">{{deals.aes_deal_curreny_code}}</span>
+                  <span class="clsPriceVal">{{deals.deal_discount_price}}</span><br>
+                  <s>
+                  <br>
+                    <span class="clsCurrencyValOld" ng-if="(1 * deals.sale_price) > deals.deal_discount_price && 1!=1">{{deals.aes_deal_curreny_code}}</span>
+                    <span class="clsPriceValOld" ng-if="(1 * deals.sale_price) > deals.deal_discount_price && 1!=1">{{deals.sale_price}}</span>
+                  </s>
+            </div>
+          </div>
+          <div class="col col-20 text-center">
+            <span> <small>BOUGHT</small></span><br>
+            <span class="clsTotalBought"> {{deals.no_of_bought }} </span>
+          </div>
+          <div class="col text-center">
+            <div class="clsDealsListViewBtn">
+              <a href="#deal/{{deals.cat_slug}}/{{deals.post_name}}" data-post-id="{{deals.ID}}" data-post-cat-name="{{deals.cat_name}}">VIEW!</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <div class="preloaderImg" ng-show="preloader"> <i class="fa fa-spinner fa-spin loading-spinner"></i> </div>
+      <div ng-hide="noMoreDeals==1" class="clsLoadMore"> <a class="btn-more" ng-click="loadMore()">Load More...</a> </div>
+      <p ng-show="noMoreDeals==1">&nbsp;</p>
+    </div>
+  </div>
+</div>
